@@ -22,10 +22,7 @@ class CustomSliderOnboarding extends GetView<OnBoardingControllerImp> {
           /// title
           Text(
             onBoardingList[i].title!,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
+            style: TextTheme.of(context).titleLarge,
           ),
           SizedBox(height: 20),
           /// image
@@ -39,11 +36,7 @@ class CustomSliderOnboarding extends GetView<OnBoardingControllerImp> {
             child: Text(
               onBoardingList[i].body!,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                height: 2,
-                color: AppColor.grey,
-                fontSize: 18,
-              ),
+              style: TextTheme.of(context).bodyLarge,
             ),
           ),
         ],

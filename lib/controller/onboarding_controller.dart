@@ -1,4 +1,6 @@
 
+import 'package:ecommerce/core/constant/route_names.dart';
+import 'package:ecommerce/data/data_source/static/static.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +15,9 @@ class OnBoardingControllerImp extends OnBoardingController{
   @override
   next() {
     currentPage++;
+    if(currentPage== onBoardingList.length) {
+     Get.offAllNamed(AppRoute.loginScreen);
+    }
     pageController.animateToPage(currentPage, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
   }
 
