@@ -19,7 +19,7 @@ class CustomButtonOnBoarding extends GetView<OnBoardingControllerImp> {
         },
         textColor: Colors.white,
         color: AppColor.primaryColor,
-        child: Text("Continue"),
+        child: Text("17".tr),
       ),
     );
   }

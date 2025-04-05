@@ -1,27 +1,25 @@
-import 'package:ecommerce/controller/auth/login_controller.dart';
+import 'package:ecommerce/controller/auth/signup_controller.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/constant/image_asset.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_form_auth.dart';
-import 'package:ecommerce/view/widget/auth_widgets/custom_text_signup_or_login.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_title_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerImp controller = Get.put(LoginControllerImp());
+    SignupControllerImp controller = Get.put(SignupControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "8".tr,
-          style: TextTheme
-              .of(
+          "18".tr,
+          style: TextTheme.of(
             context,
           ).headlineLarge!.copyWith(color: AppColor.lightGrey),
         ),
@@ -118,17 +116,28 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 10),
 
             /// don't have account
-            CustomTextSignupOrLogin(
-              leadingText: "19".tr,
-              clickableText: "18".tr,
-              onTap: () {
-                controller.goToSignUp();
-              },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Already have an account?"),
+                TextButton(
+                  onPressed: () {
+                    controller.goToLogin();
+                  },
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                      color: AppColor.blue,
+                                    fontWeight: FontWeight.bold,
+                    ) ,
+                  ),
+                ),
+              ],
             ),
-
           ],
-        ),
+         ),
       ),
     );
   }
 }
+

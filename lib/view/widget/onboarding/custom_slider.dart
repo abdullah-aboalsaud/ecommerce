@@ -25,12 +25,14 @@ class CustomSliderOnboarding extends GetView<OnBoardingControllerImp> {
             style: TextTheme.of(context).titleLarge,
           ),
           SizedBox(height: 20),
+
           /// image
           Image.asset(onBoardingList[i].image!),
-          SizedBox(height: 30),
+          SizedBox(height:i==2?50:0),
 
           /// text body
           Container(
+            margin: EdgeInsets.symmetric(horizontal: 30),
             width: double.infinity,
             alignment: Alignment.center,
             child: Text(

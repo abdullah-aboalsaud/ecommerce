@@ -6,4 +6,7 @@ class ImageAsset{
   static const String onBoardingImageThree="$rootImages/track.png";
   static const String onBoardingImageFour="$rootImages/delivery.png";
 
+  static const String googleLogo = "$rootImages/google_logo.svg";
+  static const String faceBookLogo = "$rootImages/facebook_logo.svg";
+
 }

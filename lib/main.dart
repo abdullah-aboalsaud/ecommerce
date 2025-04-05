@@ -2,8 +2,7 @@ import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/localization/change_locale.dart';
 import 'package:ecommerce/core/localization/translation.dart';
 import 'package:ecommerce/core/services/services.dart';
-import 'package:ecommerce/view/screen/language_screen.dart';
-import 'package:ecommerce/view/screen/onboarding.dart';
+import 'package:ecommerce/view/screen/auth/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'routes.dart';
@@ -36,17 +35,24 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
             fontSize: 20,
             color: AppColor.black,
-            fontFamily: "PlayfairDisplay-Bold",
+            fontFamily: "PlayfairDisplay",
+          ),
+          headlineMedium: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 26,
+            color: AppColor.black,
+            fontFamily: "PlayfairDisplay",
           ),
 
           /// body
           bodyLarge: TextStyle(height: 2, color: AppColor.grey, fontSize: 18),
+          bodyMedium: TextStyle(color: AppColor.grey, fontSize: 16),
         ),
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
 
       /// start page run
-      home: LanguageScreen(),
+      home: SignUpScreen(),
+      //LoginScreen(),
       routes: routes,
     );
   }
