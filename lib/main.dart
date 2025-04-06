@@ -3,6 +3,7 @@ import 'package:ecommerce/core/localization/change_locale.dart';
 import 'package:ecommerce/core/localization/translation.dart';
 import 'package:ecommerce/core/services/services.dart';
 import 'package:ecommerce/view/screen/auth/signup_screen.dart';
+import 'package:ecommerce/view/screen/language_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'routes.dart';
@@ -51,7 +52,7 @@ class MyApp extends StatelessWidget {
       ),
 
       /// start page run
-      home: SignUpScreen(),
+      home: LanguageScreen(),
       //LoginScreen(),
       routes: routes,
     );

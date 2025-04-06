@@ -20,8 +20,7 @@ class LoginScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           "8".tr,
-          style: TextTheme
-              .of(
+          style: TextTheme.of(
             context,
           ).headlineLarge!.copyWith(color: AppColor.lightGrey),
         ),
@@ -64,10 +63,13 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 20),
 
             /// forget Password
-            Text(
-              "Forget Password",
-              textAlign: TextAlign.end,
-              style: TextStyle(decoration: TextDecoration.underline),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 8.0),
+              child: Text(
+                "20".tr,
+                textAlign: TextAlign.end,
+                style: TextStyle(decoration: TextDecoration.underline),
+              ),
             ),
             SizedBox(height: 30),
 
@@ -84,7 +86,7 @@ class LoginScreen extends StatelessWidget {
               ),
               child: Text("8".tr),
             ),
-            SizedBox(height: 60),
+            SizedBox(height: 50),
 
             /// sign in options
             Row(
@@ -125,7 +127,6 @@ class LoginScreen extends StatelessWidget {
                 controller.goToSignUp();
               },
             ),
-
           ],
         ),
       ),

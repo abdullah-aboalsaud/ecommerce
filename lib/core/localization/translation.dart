@@ -22,10 +22,19 @@ class MyTranslation extends Translations {
       "13": "تتبع طلبك",
       "14": "تم استخدام أفضل أداة تتبع لتتبع طلبك. ستعرف مكان منتجك حاليًا.",
       "15": "توصيل سريع",
-      "16":"توصيل سريع وموثوق\n نوصل منتجك بأسرع وقت ممكن.",
+      "16": "توصيل سريع وموثوق\n نوصل منتجك بأسرع وقت ممكن.",
       "17": "متابعه",
-      "18": "انشاء حساب",
+      "18": " انشاء حساب",
       "19": "ليس لديك حساب ؟ ",
+      "20": "نسيت كلمة المرور",
+      "21": "سجل حسابك",
+      "22":
+          "أكمل تفاصيل حسابك أو\n تابع عبر وسائل التواصل الاجتماعي",
+      "23": "اسم المستخدم",
+      "24": "ادخل اسم المستخدم",
+      "25": "تأكيد كلمة المرور",
+      "26": "ادخل كلمة المرور مرة اخرى",
+      "27": "لدي حساب بالفعل؟",
 
       // "5": "يمكنك الدفع كاش او \n من خلال بوابات الدفع الالكترونية",
       // "7": "يمكنك تتبع طلبك في كل مرحلة \n وايضا التتبع من خلال الخريطة",
@@ -33,13 +42,12 @@ class MyTranslation extends Translations {
       // "يمكنك تسجيل الدخول من خلال البريد وكلمة المرور او من خلال وسائل التواصل الاجتماعي",
       // "12": "ادخل البريد الالكتروني",
       // "13": "ادخل كلمة المرور",
-      // "14": "هل نسيت كلمة المرور",
+
       // "15": "تسجيل الدخول",
 
-      // "20": "اسم المستخدم",
       // "21": "رقم الهاتف",
       // "22": "ادخل رقم الهاتف",
-      // "23": "ادخل اسم المستخدم",
+
       // "24":
       // "انشاء حساب من خلال البريد وكلمة المرور او من خلال وسائل التواصل الاجتماعي",
       // "25": " لديك حساب ? ",
@@ -78,10 +86,20 @@ class MyTranslation extends Translations {
       "14":
           "Best Tracker has been Used For\nTrack your order. You'll know where\nyour product is at the moment",
       "15": "Fast Delivery",
-      "16":"Reliable And Fast Delivery. We\nDeliver your product the fastest\nway possible",
+      "16":
+          "Reliable And Fast Delivery. We\nDeliver your product the fastest\nway possible",
       "17": "Continue",
       "18": "Sign Up",
       "19": "Don't Have An Account ? ",
+      "20": "Forget Password",
+      "21": "Register Account",
+      "22":
+          "complete your details or continue\n with social media",
+      "23": "Username",
+      "24": "Enter Your Username",
+      "25": "Confirm Password",
+      "26": "Enter your password again",
+      "27": "Already have account? ",
 
       // "5": "You can pay in cash \n or through payment gateways",
       // "7":
@@ -91,13 +109,11 @@ class MyTranslation extends Translations {
       // "Sign In Your Email And Password Or  Continue With Social Media",
       // "12": "Enter Your Email",
       // "13": "Enter Your Password",
-      // "14": "Forget Password",
-      // "15": "Sign In",
 
-      // "20": "Username",
+      // "15": "Sign In",
       // "21": "Phone",
       // "22": "Enter Your Phone",
-      // "23": "Enter Your Username",
+
       // "24":
       // "Sign Up With Your Email And Password OR Continue With Social Media",
       // "25": " have an account ? ",

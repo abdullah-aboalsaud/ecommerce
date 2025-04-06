@@ -32,18 +32,26 @@ class SignUpScreen extends StatelessWidget {
       ),
 
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
         child: ListView(
           children: [
             SizedBox(height: 20),
 
-            /// welcome title
-            CustomTextTitleAuth(text: "2"),
+            /// register now title
+            CustomTextTitleAuth(text: "21"),
             SizedBox(height: 10),
 
             /// text under title
-            CustomTextBodyAuth(text: "3"),
+            CustomTextBodyAuth(text: "22"),
             SizedBox(height: 60),
+
+            /// text field username
+            CustomTextFormAuth(
+              hintText: "24",
+              labelText: "23",
+              iconData: Icons.person_outline,
+            ),
+            SizedBox(height: 25),
 
             /// text field email
             CustomTextFormAuth(
@@ -59,13 +67,12 @@ class SignUpScreen extends StatelessWidget {
               labelText: "7",
               iconData: Icons.lock_outline_rounded,
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 25),
 
-            /// forget Password
-            Text(
-              "Forget Password",
-              textAlign: TextAlign.end,
-              style: TextStyle(decoration: TextDecoration.underline),
+            CustomTextFormAuth(
+              hintText: "26",
+              labelText: "25",
+              iconData: Icons.lock_outline_rounded,
             ),
             SizedBox(height: 30),
 
@@ -80,9 +87,9 @@ class SignUpScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
-              child: Text("8".tr),
+              child: Text("18".tr),
             ),
-            SizedBox(height: 60),
+            SizedBox(height: 20),
 
             /// sign in options
             Row(
@@ -113,31 +120,29 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10),
 
             /// don't have account
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Already have an account?"),
+                Text("27".tr),
                 TextButton(
                   onPressed: () {
                     controller.goToLogin();
                   },
                   child: Text(
-                    "Login",
+                    "8".tr,
                     style: TextStyle(
                       color: AppColor.blue,
-                                    fontWeight: FontWeight.bold,
-                    ) ,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],
             ),
           ],
-         ),
+        ),
       ),
     );
   }
 }
-
