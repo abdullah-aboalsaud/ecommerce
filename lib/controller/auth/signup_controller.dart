@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 
 abstract class SignUpController extends GetxController {
   goToLogin();
+  signUp();
 }
 
 class SignupControllerImp extends SignUpController {
@@ -33,6 +34,11 @@ class SignupControllerImp extends SignUpController {
   @override
   goToLogin() {
     Get.toNamed(AppRoute.loginScreen);
+  }
+
+  @override
+  signUp() {
+   Get.offNamed(AppRoute.checkEmailScreen);
   }
 
 }

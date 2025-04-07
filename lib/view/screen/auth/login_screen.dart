@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/auth/login_controller.dart';
+import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/constant/image_asset.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
@@ -72,7 +73,7 @@ class LoginScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: Text(
-                  "forgetPassword".tr,
+                  AppStrings.forgetPassword.tr,
                   textAlign: TextAlign.end,
                   style: TextStyle(decoration: TextDecoration.underline),
                 ),
@@ -91,7 +92,7 @@ class LoginScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
-              child: Text("8".tr),
+              child: Text(AppStrings.signIn.tr),
             ),
             SizedBox(height: 50),
 
@@ -128,8 +129,8 @@ class LoginScreen extends StatelessWidget {
 
             /// don't have account
             CustomTextSignupOrLogin(
-              leadingText: "19".tr,
-              clickableText: "18".tr,
+              leadingText: AppStrings.dontHaveAccount.tr,
+              clickableText: AppStrings.signUp.tr,
               onTap: () {
                 controller.goToSignUp();
               },
