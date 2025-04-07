@@ -2,7 +2,12 @@ import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/localization/change_locale.dart';
 import 'package:ecommerce/core/localization/translation.dart';
 import 'package:ecommerce/core/services/services.dart';
+import 'package:ecommerce/test.dart';
+import 'package:ecommerce/view/screen/auth/forget_password_screen.dart';
+import 'package:ecommerce/view/screen/auth/login_screen.dart';
+import 'package:ecommerce/view/screen/auth/reset_password_screen.dart';
 import 'package:ecommerce/view/screen/auth/signup_screen.dart';
+import 'package:ecommerce/view/screen/auth/verify_code_screen.dart';
 import 'package:ecommerce/view/screen/language_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -52,8 +57,13 @@ class MyApp extends StatelessWidget {
       ),
 
       /// start page run
-      home: LanguageScreen(),
-      //LoginScreen(),
+      home:
+          LanguageScreen(),
+          //  LoginScreen(),
+          // ResetPasswordScreen(),
+          // ForgetPassword(),
+          //TestScreen(),
+          //VerifyCodeScreen(),
       routes: routes,
     );
   }

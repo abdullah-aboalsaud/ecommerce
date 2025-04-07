@@ -6,14 +6,14 @@ class CustomTextFormAuth extends StatefulWidget {
   final String hintText;
   final String labelText;
   final IconData? iconData;
-  final TextEditingController? textEditingController;
+  final TextEditingController? controller;
 
   const CustomTextFormAuth({
     super.key,
     required this.hintText,
     required this.labelText,
-    this.textEditingController,
-    this.iconData,
+
+    this.iconData,  this.controller,
   });
 
   @override
@@ -43,7 +43,7 @@ class _CustomTextFormAuthState extends State<CustomTextFormAuth> {
 
     return TextFormField(
       focusNode: _focusNode,
-      controller: widget.textEditingController,
+      controller: widget.controller,
       decoration: InputDecoration(
         hintText: widget.hintText.tr,
         hintStyle: TextStyle(fontSize: 14),

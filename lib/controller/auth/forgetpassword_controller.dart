@@ -1,0 +1,30 @@
+import 'package:ecommerce/core/constant/route_names.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+abstract class ForgetPasswordController extends GetxController {
+  checkEmail();
+
+  goToVerifyCode();
+}
+
+class ForgetPasswordControllerImpl extends ForgetPasswordController {
+  late TextEditingController email;
+  @override
+  void onInit() {
+    email = TextEditingController();
+    super.onInit();
+  }
+  @override
+  void onClose() {
+    email.dispose();
+    super.onClose();
+  }
+  @override
+  checkEmail() {
+  }
+  @override
+  goToVerifyCode() {
+    Get.toNamed(AppRoute.verifyCode);
+  }
+}

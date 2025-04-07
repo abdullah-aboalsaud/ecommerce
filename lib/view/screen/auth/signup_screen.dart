@@ -19,9 +19,7 @@ class SignUpScreen extends StatelessWidget {
         centerTitle: true,
         title: Text(
           "18".tr,
-          style: TextTheme.of(
-            context,
-          ).headlineLarge!.copyWith(color: AppColor.lightGrey),
+          style: TextTheme.of(context,).headlineLarge!.copyWith(color: AppColor.lightGrey),
         ),
         leading: IconButton(
           icon: Icon(Icons.arrow_back_ios),
@@ -50,6 +48,7 @@ class SignUpScreen extends StatelessWidget {
               hintText: "24",
               labelText: "23",
               iconData: Icons.person_outline,
+              controller: controller.userName,
             ),
             SizedBox(height: 25),
 
@@ -58,6 +57,7 @@ class SignUpScreen extends StatelessWidget {
               hintText: "4",
               labelText: "6",
               iconData: Icons.email_outlined,
+              controller: controller.signUpEmail,
             ),
             SizedBox(height: 25),
 
@@ -66,13 +66,16 @@ class SignUpScreen extends StatelessWidget {
               hintText: "5",
               labelText: "7",
               iconData: Icons.lock_outline_rounded,
+              controller: controller.signUpPassword,
             ),
             SizedBox(height: 25),
 
+            /// confirm password field
             CustomTextFormAuth(
-              hintText: "26",
-              labelText: "25",
+              hintText: "reEnterPassword",
+              labelText: "confirmPassword",
               iconData: Icons.lock_outline_rounded,
+              controller: controller.signUpConfirmPassword,
             ),
             SizedBox(height: 30),
 

@@ -14,7 +14,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LoginControllerImp controller = Get.put(LoginControllerImp());
+    LoginControllerImpl controller = Get.put(LoginControllerImpl());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -51,6 +51,7 @@ class LoginScreen extends StatelessWidget {
               hintText: "4",
               labelText: "6",
               iconData: Icons.email_outlined,
+              controller: controller.email,
             ),
             SizedBox(height: 25),
 
@@ -59,16 +60,22 @@ class LoginScreen extends StatelessWidget {
               hintText: "5",
               labelText: "7",
               iconData: Icons.lock_outline_rounded,
+              controller: controller.password,
             ),
             SizedBox(height: 20),
 
             /// forget Password
-            Padding(
-              padding: const EdgeInsets.only(bottom: 8.0),
-              child: Text(
-                "20".tr,
-                textAlign: TextAlign.end,
-                style: TextStyle(decoration: TextDecoration.underline),
+            InkWell(
+              onTap: (){
+                controller.goToForgetPassword();
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 8.0),
+                child: Text(
+                  "forgetPassword".tr,
+                  textAlign: TextAlign.end,
+                  style: TextStyle(decoration: TextDecoration.underline),
+                ),
               ),
             ),
             SizedBox(height: 30),

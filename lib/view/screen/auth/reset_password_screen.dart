@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/auth/forgetpassword_controller.dart';
+import 'package:ecommerce/controller/auth/reset_password_controller.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_form_auth.dart';
@@ -6,20 +7,20 @@ import 'package:ecommerce/view/widget/auth_widgets/custom_text_title_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({super.key});
+class ResetPasswordScreen extends StatelessWidget {
+  const ResetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordControllerImpl controller = Get.put(
-      ForgetPasswordControllerImpl(),
+    ResetPasswordControllerImpl controller = Get.put(
+      ResetPasswordControllerImpl(),
     );
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         elevation: 0.0,
         title: Text(
-          "forgetPassword".tr,
+          "resetPassword".tr,
           style: Theme.of(
             context,
           ).textTheme.headlineLarge!.copyWith(color: AppColor.grey),
@@ -33,28 +34,34 @@ class ForgetPassword extends StatelessWidget {
             SizedBox(height: 20),
 
             /// title of the page
-            CustomTextTitleAuth(text: "checkEmail"),
+            CustomTextTitleAuth(text: "newPassword"),
             SizedBox(height: 10),
 
             /// text under title
             CustomTextBodyAuth(text: "enterEmailToVerify"),
             SizedBox(height: 60),
 
-
-            /// text field email
+            /// text field enter new password
             CustomTextFormAuth(
-              hintText: "4",
-              labelText: "6",
+              hintText: "enterNewPassword",
+              labelText: "newPassword",
               iconData: Icons.email_outlined,
-             controller: controller.email,
+              controller: controller.password,
             ),
-            SizedBox(height: 60),
-
+            SizedBox(height: 25,),
+            /// Re Enter password
+            CustomTextFormAuth(
+              hintText: "reEnterPassword",
+              labelText: "confirmPassword",
+              iconData: Icons.lock_outline_rounded,
+              controller: controller.rePassword,
+            ),
+            SizedBox(height: 30),
 
             /// check button
             MaterialButton(
               onPressed: () {
-                controller.goToVerifyCode();
+                // Handle continue button press
               },
               color: AppColor.blue,
               textColor: AppColor.white,
@@ -62,11 +69,9 @@ class ForgetPassword extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
-              child: Text("check".tr),
+              child: Text("save".tr),
             ),
             SizedBox(height: 20),
-
-
           ],
         ),
       ),
