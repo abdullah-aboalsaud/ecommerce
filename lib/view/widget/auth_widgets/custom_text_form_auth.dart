@@ -12,8 +12,8 @@ class CustomTextFormAuth extends StatefulWidget {
     super.key,
     required this.hintText,
     required this.labelText,
-
-    this.iconData,  this.controller,
+    this.iconData,
+    this.controller,
   });
 
   @override
@@ -45,13 +45,12 @@ class _CustomTextFormAuthState extends State<CustomTextFormAuth> {
       focusNode: _focusNode,
       controller: widget.controller,
       decoration: InputDecoration(
-        hintText: widget.hintText.tr,
+        hintText: widget.hintText,
         hintStyle: TextStyle(fontSize: 14),
         floatingLabelBehavior: FloatingLabelBehavior.always,
         label: Container(
           margin: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text(
-            widget.labelText.tr,
+          child: Text(widget.labelText,
             style: TextStyle(
               color: isFocused ? AppColor.blue : AppColor.lightGrey,
             ),
@@ -65,9 +64,7 @@ class _CustomTextFormAuthState extends State<CustomTextFormAuth> {
           widget.iconData,
           color: isFocused ? AppColor.blue : AppColor.lightGrey,
         ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(40),
-        ),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: Colors.blue, width: 2.0),
           borderRadius: BorderRadius.circular(40),
@@ -76,7 +73,6 @@ class _CustomTextFormAuthState extends State<CustomTextFormAuth> {
     );
   }
 }
-
 
 // import 'package:ecommerce/core/constant/color.dart';
 // import 'package:flutter/material.dart';

@@ -3,6 +3,7 @@ import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/constant/image_asset.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_already_have_account_button.dart';
+import 'package:ecommerce/view/widget/auth_widgets/custom_button_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_form_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_title_auth.dart';
@@ -40,17 +41,17 @@ class SignUpScreen extends StatelessWidget {
             SizedBox(height: 20),
 
             /// register now title
-            CustomTextTitleAuth(text: AppStrings.registerAccount),
+            CustomTextTitleAuth(text: AppStrings.registerAccount.tr),
             SizedBox(height: 10),
 
             /// text under title
-            CustomTextBodyAuth(text: AppStrings.completeDetails),
+            CustomTextBodyAuth(text: AppStrings.completeDetails.tr),
             SizedBox(height: 60),
 
             /// text field username
             CustomTextFormAuth(
-              hintText: "24",
-              labelText: "23",
+              hintText: AppStrings.enterUserName.tr,
+              labelText: AppStrings.userName.tr,
               iconData: Icons.person_outline,
               controller: controller.userName,
             ),
@@ -58,8 +59,8 @@ class SignUpScreen extends StatelessWidget {
 
             /// text field email
             CustomTextFormAuth(
-              hintText: "4",
-              labelText: "6",
+              hintText: AppStrings.enterEmail.tr,
+              labelText: AppStrings.email.tr,
               iconData: Icons.email_outlined,
               controller: controller.signUpEmail,
             ),
@@ -67,8 +68,8 @@ class SignUpScreen extends StatelessWidget {
 
             /// text field password
             CustomTextFormAuth(
-              hintText: "5",
-              labelText: "7",
+              hintText: AppStrings.enterPassword.tr,
+              labelText: AppStrings.password.tr,
               iconData: Icons.lock_outline_rounded,
               controller: controller.signUpPassword,
             ),
@@ -76,25 +77,19 @@ class SignUpScreen extends StatelessWidget {
 
             /// confirm password field
             CustomTextFormAuth(
-              hintText: "reEnterPassword",
-              labelText: "confirmPassword",
+              hintText: AppStrings.reEnterPassword.tr,
+              labelText: AppStrings.confirmPassword.tr,
               iconData: Icons.lock_outline_rounded,
               controller: controller.signUpConfirmPassword,
             ),
             SizedBox(height: 30),
 
             /// sign up button
-            MaterialButton(
+            CustomButtonAuth(
+              text: AppStrings.signUp.tr,
               onPressed: () {
                 controller.signUp();
               },
-              color: AppColor.blue,
-              textColor: AppColor.white,
-              padding: EdgeInsets.symmetric(vertical: 15),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: Text(AppStrings.signUp.tr),
             ),
             SizedBox(height: 20),
 

@@ -33,17 +33,17 @@ class CheckEmailScreen extends StatelessWidget {
             SizedBox(height: 20),
 
             /// title of the page
-            CustomTextTitleAuth(text: AppStrings.checkEmail),
+            CustomTextTitleAuth(text: AppStrings.checkEmail.tr),
             SizedBox(height: 10),
 
             /// text under title
-            CustomTextBodyAuth(text: AppStrings.enterEmailToVerify),
+            CustomTextBodyAuth(text: AppStrings.enterEmailToVerify.tr),
             SizedBox(height: 60),
 
             /// text field email
             CustomTextFormAuth(
-              hintText: AppStrings.enterEmail,
-              labelText: AppStrings.email,
+              hintText: AppStrings.enterEmail.tr,
+              labelText: AppStrings.email.tr,
               iconData: Icons.email_outlined,
               controller: controller.email,
             ),

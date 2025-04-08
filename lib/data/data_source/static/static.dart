@@ -1,26 +1,27 @@
+import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/image_asset.dart';
 import 'package:ecommerce/data/model/on_boarding_model.dart';
 import 'package:get/get.dart';
 
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
-    title: "9".tr,
-    body: "10".tr,
+    title: AppStrings.chooseProduct.tr,
+    body: AppStrings.chooseYourProductFrom.tr,
     image: ImageAsset.onBoardingImageOne,
   ),
   OnBoardingModel(
-    title: "11".tr,
-    body: "12".tr,
+    title: AppStrings.easySafePayment.tr,
+    body: AppStrings.easySafePaymentExplain.tr,
     image: ImageAsset.onBoardingImageTwo,
   ),
   OnBoardingModel(
-    title: "13".tr,
-    body: "14".tr,
+    title: AppStrings.trackYourOrder.tr,
+    body: AppStrings.bestTrackerExplain.tr,
     image: ImageAsset.onBoardingImageThree,
   ),
   OnBoardingModel(
-    title: "15".tr,
-    body: "16".tr,
+    title: AppStrings.fastDelivery.tr,
+    body: AppStrings.fastDeliveryExplain.tr,
     image: ImageAsset.onBoardingImageFour,
   ),
 ];

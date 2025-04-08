@@ -1,5 +1,6 @@
 import 'package:ecommerce/controller/auth/forgetpassword_controller.dart';
 import 'package:ecommerce/controller/auth/reset_password_controller.dart';
+import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_form_auth.dart';
@@ -20,7 +21,7 @@ class ResetPasswordScreen extends StatelessWidget {
         centerTitle: true,
         elevation: 0.0,
         title: Text(
-          "resetPassword".tr,
+          AppStrings.resetPassword.tr,
           style: Theme.of(
             context,
           ).textTheme.headlineLarge!.copyWith(color: AppColor.grey),
@@ -34,25 +35,25 @@ class ResetPasswordScreen extends StatelessWidget {
             SizedBox(height: 20),
 
             /// title of the page
-            CustomTextTitleAuth(text: "newPassword"),
+            CustomTextTitleAuth(text: AppStrings.newPassword.tr),
             SizedBox(height: 10),
 
             /// text under title
-            CustomTextBodyAuth(text: "enterEmailToVerify"),
+            CustomTextBodyAuth(text: AppStrings.enterNewPasswordExplain.tr),
             SizedBox(height: 60),
 
             /// text field enter new password
             CustomTextFormAuth(
-              hintText: "enterNewPassword",
-              labelText: "newPassword",
+              hintText: AppStrings.enterNewPassword.tr,
+              labelText: AppStrings.newPassword.tr,
               iconData: Icons.email_outlined,
               controller: controller.password,
             ),
             SizedBox(height: 25,),
             /// Re Enter password
             CustomTextFormAuth(
-              hintText: "reEnterPassword",
-              labelText: "confirmPassword",
+              hintText: AppStrings.reEnterPassword.tr,
+              labelText:AppStrings.confirmPassword.tr,
               iconData: Icons.lock_outline_rounded,
               controller: controller.rePassword,
             ),
@@ -61,7 +62,7 @@ class ResetPasswordScreen extends StatelessWidget {
             /// check button
             MaterialButton(
               onPressed: () {
-                // Handle continue button press
+                controller.goToSuccessResetPassword();
               },
               color: AppColor.blue,
               textColor: AppColor.white,
@@ -69,7 +70,7 @@ class ResetPasswordScreen extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20.0),
               ),
-              child: Text("save".tr),
+              child: Text(AppStrings.save.tr),
             ),
             SizedBox(height: 20),
           ],

@@ -1,5 +1,6 @@
 import 'package:ecommerce/controller/auth/forgetpassword_controller.dart';
 import 'package:ecommerce/controller/auth/verify_code_controller.dart';
+import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_form_auth.dart';
@@ -21,7 +22,7 @@ class VerifyCodeScreen extends StatelessWidget {
         centerTitle: true,
         elevation: 0.0,
         title: Text(
-            "verificationCode".tr,
+            AppStrings.verificationCode.tr,
           style: Theme.of(
             context,
           ).textTheme.headlineLarge!.copyWith(color: AppColor.grey),
@@ -35,11 +36,11 @@ class VerifyCodeScreen extends StatelessWidget {
             SizedBox(height: 20),
 
             /// title of the page
-            CustomTextTitleAuth(text: "checkCode"),
+            CustomTextTitleAuth(text: AppStrings.checkCode.tr),
             SizedBox(height: 10),
 
             /// text under title
-            CustomTextBodyAuth(text: "enterDigitCode"),
+            CustomTextBodyAuth(text:  AppStrings.enterDigitCode.tr),
             SizedBox(height: 60),
 
 

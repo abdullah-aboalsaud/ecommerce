@@ -1,4 +1,7 @@
 class AppStrings {
+  static const String chooseLanguage = "chooseLanguage";
+  static const String enterUserName = "enterUserName";
+  static const String welcomeBack = "welcomeBack";
   static const String checkEmail = "checkEmail";
   static const String cashOrGatewayPayment = "cashOrGatewayPayment";
   static const String orderTracking = "orderTracking";
@@ -18,7 +21,9 @@ class AppStrings {
   static const String goToLogin = "goToLogin";
   static const String success = "success";
   static const String save = "save";
+  static const String enterNewPasswordExplain = "enterNewPasswordExplain";
   static const String enterNewPassword = "enterNewPassword";
+
   static const String newPassword = "newPassword";
   static const String passwordResetSuccess = "passwordResetSuccess";
   static const String congratulations = "congratulations";
@@ -33,7 +38,20 @@ class AppStrings {
   static const String forgetPassword = "forgetPassword";
   static const String registerAccount = "registerAccount";
   static const String completeDetails = "completeDetails";
-
+  static const String password = "Password";
+  static const String chooseProduct = "chooseProduct";
+  static const String chooseYourProductFrom = "chooseYourProductFrom";
+  static const String reEnterPassword = "reEnterPassword";
+  static const String easySafePayment = "easySafePayment";
+  static const String easySafePaymentExplain = "easySafePaymentExplain";
+  static const String trackYourOrder = "trackYourOrder";
+  static const String fastDelivery = "fastDelivery";
+  static const String confirmPassword = "confirmPassword";
+  static const String continueText = "continue";
+  static const String fastDeliveryExplain  = "fastDeliveryExplain ";
+  static const String bestTrackerExplain  = "bestTrackerExplain ";
+  static const String userName  = "userName ";
+  static const String enterDigitCode  = "enterDigitCode ";
 
 
 }

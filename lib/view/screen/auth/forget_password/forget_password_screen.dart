@@ -1,4 +1,5 @@
 import 'package:ecommerce/controller/auth/forgetpassword_controller.dart';
+import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_form_auth.dart';
@@ -19,7 +20,7 @@ class ForgetPassword extends StatelessWidget {
         centerTitle: true,
         elevation: 0.0,
         title: Text(
-          "forgetPassword".tr,
+          AppStrings.forgetPassword.tr,
           style: Theme.of(
             context,
           ).textTheme.headlineLarge!.copyWith(color: AppColor.grey),
@@ -33,18 +34,18 @@ class ForgetPassword extends StatelessWidget {
             SizedBox(height: 20),
 
             /// title of the page
-            CustomTextTitleAuth(text: "checkEmail"),
+            CustomTextTitleAuth(text: AppStrings.checkEmail.tr),
             SizedBox(height: 10),
 
             /// text under title
-            CustomTextBodyAuth(text: "enterEmailToVerify"),
+            CustomTextBodyAuth(text: AppStrings.enterEmailToVerify.tr),
             SizedBox(height: 60),
 
 
             /// text field email
             CustomTextFormAuth(
-              hintText: "4",
-              labelText: "6",
+              hintText: AppStrings.enterEmail.tr,
+              labelText: AppStrings.email.tr,
               iconData: Icons.email_outlined,
              controller: controller.email,
             ),

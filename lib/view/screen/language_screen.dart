@@ -1,3 +1,4 @@
+import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/route_names.dart';
 import 'package:ecommerce/core/localization/change_locale.dart';
 import 'package:ecommerce/view/widget/language_widgets/custom_button_language.dart';
@@ -16,7 +17,7 @@ class LanguageScreen extends GetView<LocaleController> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "1".tr, style: TextTheme.of(context).titleLarge),
+              AppStrings.chooseLanguage.tr, style: TextTheme.of(context).titleLarge),
             SizedBox(height: 20),
 
             /// arabic button

@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "8".tr,
+          AppStrings.signIn.tr,
           style: TextTheme.of(
             context,
           ).headlineLarge!.copyWith(color: AppColor.lightGrey),
@@ -40,17 +40,17 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 20),
 
             /// welcome title
-            CustomTextTitleAuth(text: "2"),
+            CustomTextTitleAuth(text: AppStrings.welcomeBack.tr),
             SizedBox(height: 10),
 
             /// text under title
-            CustomTextBodyAuth(text: "3"),
+            CustomTextBodyAuth(text: AppStrings.signInPrompt.tr),
             SizedBox(height: 60),
 
             /// text field email
             CustomTextFormAuth(
-              hintText: "4",
-              labelText: "6",
+              hintText: AppStrings.enterEmail.tr,
+              labelText:AppStrings.email.tr,
               iconData: Icons.email_outlined,
               controller: controller.email,
             ),
@@ -58,8 +58,8 @@ class LoginScreen extends StatelessWidget {
 
             /// text field password
             CustomTextFormAuth(
-              hintText: "5",
-              labelText: "7",
+              hintText: AppStrings.enterPassword.tr,
+              labelText: AppStrings.password.tr,
               iconData: Icons.lock_outline_rounded,
               controller: controller.password,
             ),
@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
 
             /// forget Password
             InkWell(
-              onTap: (){
+              onTap: () {
                 controller.goToForgetPassword();
               },
               child: Padding(
