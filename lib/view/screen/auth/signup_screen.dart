@@ -2,6 +2,7 @@ import 'package:ecommerce/controller/auth/signup_controller.dart';
 import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/constant/image_asset.dart';
+import 'package:ecommerce/core/functions/valid_input.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_already_have_account_button.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_button_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
@@ -24,115 +25,127 @@ class SignUpScreen extends StatelessWidget {
           AppStrings.signUp.tr,
           style: TextTheme.of(
             context,
-          ).headlineLarge!.copyWith(color: AppColor.lightGrey),
-        ),
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios),
-          onPressed: () {
-            // Handle back button press
-          },
+          ).headlineLarge!.copyWith(color: AppColor.grey),
         ),
       ),
 
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-        child: ListView(
-          children: [
-            SizedBox(height: 20),
+        child: Form(
+          key: controller.formState,
+          child: ListView(
+            children: [
+              SizedBox(height: 20),
 
-            /// register now title
-            CustomTextTitleAuth(text: AppStrings.registerAccount.tr),
-            SizedBox(height: 10),
+              /// register now title
+              CustomTextTitleAuth(text: AppStrings.registerAccount.tr),
+              SizedBox(height: 10),
 
-            /// text under title
-            CustomTextBodyAuth(text: AppStrings.completeDetails.tr),
-            SizedBox(height: 60),
+              /// text under title
+              CustomTextBodyAuth(text: AppStrings.completeDetails.tr),
+              SizedBox(height: 60),
 
-            /// text field username
-            CustomTextFormAuth(
-              hintText: AppStrings.enterUserName.tr,
-              labelText: AppStrings.userName.tr,
-              iconData: Icons.person_outline,
-              controller: controller.userName,
-            ),
-            SizedBox(height: 25),
+              /// text field username
+              CustomTextFormAuth(
+                valid: (val){
+                  return validInput(val!, 5, 100, AppStrings.userName);
+                },
+                hintText: AppStrings.enterUserName.tr,
+                labelText: AppStrings.userName.tr,
+                iconData: Icons.person_outline,
+                controller: controller.userName,
+                inputType: TextInputType.name,
+              ),
+              SizedBox(height: 25),
 
-            /// text field email
-            CustomTextFormAuth(
-              hintText: AppStrings.enterEmail.tr,
-              labelText: AppStrings.email.tr,
-              iconData: Icons.email_outlined,
-              controller: controller.signUpEmail,
-            ),
-            SizedBox(height: 25),
+              /// text field email
+              CustomTextFormAuth(
+                valid: (val){
+                  return validInput(val!, 5, 100, AppStrings.email);
+                },
+                hintText: AppStrings.enterEmail.tr,
+                labelText: AppStrings.email.tr,
+                iconData: Icons.email_outlined,
+                controller: controller.signUpEmail,
+                inputType: TextInputType.emailAddress,
+              ),
+              SizedBox(height: 25),
 
-            /// text field password
-            CustomTextFormAuth(
-              hintText: AppStrings.enterPassword.tr,
-              labelText: AppStrings.password.tr,
-              iconData: Icons.lock_outline_rounded,
-              controller: controller.signUpPassword,
-            ),
-            SizedBox(height: 25),
+              /// text field password
+              CustomTextFormAuth(
+                valid: (val){
+                  return validInput(val!, 5, 20,AppStrings.password );
+                },
+                hintText: AppStrings.enterPassword.tr,
+                labelText: AppStrings.password.tr,
+                iconData: Icons.lock_outline_rounded,
+                controller: controller.signUpPassword,
+                inputType: TextInputType.visiblePassword,
+              ),
+              SizedBox(height: 25),
 
-            /// confirm password field
-            CustomTextFormAuth(
-              hintText: AppStrings.reEnterPassword.tr,
-              labelText: AppStrings.confirmPassword.tr,
-              iconData: Icons.lock_outline_rounded,
-              controller: controller.signUpConfirmPassword,
-            ),
-            SizedBox(height: 30),
+              /// confirm password field
+              CustomTextFormAuth(
+                valid: (val){
+                  return validInput(val!, 5, 20, AppStrings.confirmPassword);
+                },
+                hintText: AppStrings.reEnterPassword.tr,
+                labelText: AppStrings.confirmPassword.tr,
+                iconData: Icons.lock_outline_rounded,
+                controller: controller.signUpConfirmPassword,
+              ),
+              SizedBox(height: 30),
 
-            /// sign up button
-            CustomButtonAuth(
-              text: AppStrings.signUp.tr,
-              onPressed: () {
-                controller.signUp();
-              },
-            ),
-            SizedBox(height: 20),
+              /// sign up button
+              CustomButtonAuth(
+                text: AppStrings.signUp.tr,
+                onPressed: () {
+                  controller.signUp();
+                },
+              ),
+              SizedBox(height: 20),
 
-            /// sign up options
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  icon: SvgPicture.asset(
-                    ImageAsset.googleLogo,
-                    width: 60,
-                    height: 60,
+              /// sign up options
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: SvgPicture.asset(
+                      ImageAsset.googleLogo,
+                      width: 60,
+                      height: 60,
+                    ),
+                    // Replace with your asset path
+                    onPressed: () {
+                      // Handle Google sign-in
+                    },
                   ),
-                  // Replace with your asset path
-                  onPressed: () {
-                    // Handle Google sign-in
-                  },
-                ),
 
-                IconButton(
-                  icon: SvgPicture.asset(
-                    ImageAsset.faceBookLogo,
-                    width: 60,
-                    height: 60,
+                  IconButton(
+                    icon: SvgPicture.asset(
+                      ImageAsset.faceBookLogo,
+                      width: 60,
+                      height: 60,
+                    ),
+                    // Replace with your asset path
+                    onPressed: () {
+                      // Handle Facebook sign-in
+                    },
                   ),
-                  // Replace with your asset path
-                  onPressed: () {
-                    // Handle Facebook sign-in
-                  },
-                ),
-              ],
-            ),
+                ],
+              ),
 
-            /// already have account
-            CustomAlreadyHaveAccountButton(
-              text1: AppStrings.alreadyHaveAccount.tr,
-              text2: AppStrings.signIn.tr,
-              color: AppColor.blue,
-              onPressed: () {
-                controller.goToLogin();
-              },
-            ),
-          ],
+              /// already have account
+              CustomAlreadyHaveAccountButton(
+                text1: AppStrings.alreadyHaveAccount.tr,
+                text2: AppStrings.signIn.tr,
+                color: AppColor.blue,
+                onPressed: () {
+                  controller.goToLogin();
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

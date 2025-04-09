@@ -5,6 +5,7 @@ class MyTranslation extends Translations {
   @override
   Map<String, Map<String, String>> get keys => {
     "en": {
+      AppStrings.notValidEmail:"Not Valid Email",
       AppStrings.chooseLanguage: "Choose Language",
       AppStrings.welcomeBack: "Welcome Back",
       AppStrings.enterEmail: "Enter Your Email",
@@ -66,10 +67,21 @@ class MyTranslation extends Translations {
       AppStrings.checkCode: "Check Code",
       AppStrings.enterDigitCode:
           "Please Enter the Digit Code Sent to your email",
+      AppStrings.notValidUserName:"Not Valid Username",
+      AppStrings.notValidPhone:"Not Valid Phone number",
+      AppStrings.cantBeLessThan:"Value can't be less than ",
+      AppStrings.cantBeGreaterThan:"Value can't be larger than ",
+      AppStrings.cantBeEmpty: "Can't be Empty",
+
     },
 
     /// arabic section --------------------------------------------------------
     "ar": {
+      AppStrings.cantBeEmpty: "لا يمكن أن يكون فارغًا",
+      AppStrings.cantBeGreaterThan:"لا يمكن ان تكون القيمة اكبر من ",
+      AppStrings.cantBeLessThan:"لا يمكن ان تكون القيمة اقل من ",
+      AppStrings.notValidPhone:"رقم هاتف غير صالح",
+      AppStrings.notValidEmail:"بريد غير صالح",
       AppStrings.chooseLanguage: "اختر اللغة",
       AppStrings.welcomeBack: "مرحبا بك",
       AppStrings.enterPassword: "ادخل كلمة المرور",
@@ -127,6 +139,7 @@ class MyTranslation extends Translations {
       AppStrings.verificationCode: "رمز التحقق",
       AppStrings.checkCode: "التحقق من الرمز",
       AppStrings.enterDigitCode: "الرجاء إدخال الرمز الرقمي المرسل إلى بريدك الإلكتروني",
+      AppStrings.notValidUserName:"اسم مستخدم غير صالح"
     },
   };
 }

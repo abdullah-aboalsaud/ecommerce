@@ -8,20 +8,18 @@ import 'package:ecommerce/view/widget/auth_widgets/custom_text_title_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ForgetPasswordScreen extends StatelessWidget {
-  const ForgetPasswordScreen({super.key});
+class CheckEmailScreen extends StatelessWidget {
+  const CheckEmailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ForgetPasswordControllerImpl controller = Get.put(
-      ForgetPasswordControllerImpl(),
-    );
+    ForgetPasswordControllerImpl controller = Get.put(ForgetPasswordControllerImpl());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         elevation: 0.0,
         title: Text(
-          AppStrings.forgetPassword.tr,
+          AppStrings.checkEmail.tr,
           style: Theme.of(
             context,
           ).textTheme.headlineLarge!.copyWith(color: AppColor.grey),
@@ -46,14 +44,13 @@ class ForgetPasswordScreen extends StatelessWidget {
 
               /// text field email
               CustomTextFormAuth(
-                valid: (val) {
+                valid: (val){
                   return validInput(val!, 5, 100, AppStrings.email);
                 },
                 hintText: AppStrings.enterEmail.tr,
                 labelText: AppStrings.email.tr,
                 iconData: Icons.email_outlined,
                 controller: controller.email,
-                inputType: TextInputType.emailAddress,
               ),
               SizedBox(height: 60),
 

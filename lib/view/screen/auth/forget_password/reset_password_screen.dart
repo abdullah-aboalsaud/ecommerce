@@ -24,7 +24,7 @@ class ResetPasswordScreen extends StatelessWidget {
           AppStrings.resetPassword.tr,
           style: Theme.of(
             context,
-          ).textTheme.headlineLarge!.copyWith(color: AppColor.grey),
+          ).textTheme.headlineLarge!.copyWith(color: AppColor.darkGrey),
         ),
       ),
 
@@ -44,6 +44,7 @@ class ResetPasswordScreen extends StatelessWidget {
 
             /// text field enter new password
             CustomTextFormAuth(
+              valid: (val){},
               hintText: AppStrings.enterNewPassword.tr,
               labelText: AppStrings.newPassword.tr,
               iconData: Icons.email_outlined,
@@ -52,6 +53,7 @@ class ResetPasswordScreen extends StatelessWidget {
             SizedBox(height: 25,),
             /// Re Enter password
             CustomTextFormAuth(
+              valid: (val){},
               hintText: AppStrings.reEnterPassword.tr,
               labelText:AppStrings.confirmPassword.tr,
               iconData: Icons.lock_outline_rounded,
@@ -59,7 +61,7 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             SizedBox(height: 30),
 
-            /// check button
+            /// save button
             MaterialButton(
               onPressed: () {
                 controller.goToSuccessResetPassword();

@@ -1,5 +1,6 @@
 import 'package:ecommerce/controller/auth/forgetpassword_controller.dart';
 import 'package:ecommerce/controller/auth/verify_code_controller.dart';
+import 'package:ecommerce/controller/auth/verify_code_sign_up_controller.dart';
 import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
@@ -9,20 +10,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 import 'package:get/get.dart';
 
-class VerifyCodeScreen extends StatelessWidget {
-  const VerifyCodeScreen({super.key});
+class VerifyCodeSignUpScreen extends StatelessWidget {
+  const VerifyCodeSignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeControllerImpl controller = Get.put(
-      VerifyCodeControllerImpl(),
+    VerifyCodeSignUpControllerImpl controller = Get.put(
+      VerifyCodeSignUpControllerImpl(),
     );
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         elevation: 0.0,
         title: Text(
-            AppStrings.verificationCode.tr,
+          AppStrings.verificationCode.tr,
           style: Theme.of(
             context,
           ).textTheme.headlineLarge!.copyWith(color: AppColor.darkGrey),
@@ -58,30 +59,13 @@ class VerifyCodeScreen extends StatelessWidget {
                 onCodeChanged: (String code) {
                   //handle validation or checks here
                 },
-                //runs when every textfield is filled
+                //runs when every text field is filled
                 onSubmit: (String verificationCode){
-                  controller.goToResetPassword();
+                  controller.goToSuccessSignUp();
                 }, //
               ),
             ),
 
-
-            SizedBox(height: 30),
-
-            /// save button
-            MaterialButton(
-              onPressed: () {
-                controller.goToResetPassword();
-              },
-              color: AppColor.blue,
-              textColor: AppColor.white,
-              padding: EdgeInsets.symmetric(vertical: 15),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: Text(AppStrings.continueText.tr),
-            ),
-            SizedBox(height: 20),
 
           ],
         ),

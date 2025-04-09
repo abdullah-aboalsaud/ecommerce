@@ -11,14 +11,14 @@ class CustomButtonOnBoarding extends GetView<OnBoardingControllerImp> {
     return Container(
       margin: EdgeInsets.only(bottom: 30),
       child: MaterialButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        padding: EdgeInsets.symmetric(horizontal: 100, vertical: 2),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        padding: EdgeInsets.symmetric(horizontal: 100,vertical: 12),
         /// when click
         onPressed: () {
           controller.next();
         },
         textColor: Colors.white,
-        color: AppColor.primaryColor,
+        color: AppColor.blue,
         child: Text("continue".tr),
       ),
     );

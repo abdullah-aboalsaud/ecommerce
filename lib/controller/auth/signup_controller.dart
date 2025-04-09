@@ -4,10 +4,12 @@ import 'package:get/get.dart';
 
 abstract class SignUpController extends GetxController {
   goToLogin();
+
   signUp();
 }
 
 class SignupControllerImp extends SignUpController {
+  GlobalKey<FormState> formState = GlobalKey<FormState>();
   late TextEditingController userName;
   late TextEditingController signUpEmail;
   late TextEditingController signUpPassword;
@@ -38,7 +40,12 @@ class SignupControllerImp extends SignUpController {
 
   @override
   signUp() {
-   Get.offNamed(AppRoute.checkEmailScreen);
+    var formData = formState.currentState;
+    if (formData!.validate()) {
+      // valid
+      Get.offNamed(AppRoute.verifyCodeSignUpScreen);
+    } else {
+      // not valid
+    }
   }
-
 }

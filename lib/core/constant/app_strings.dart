@@ -52,6 +52,12 @@ class AppStrings {
   static const String bestTrackerExplain  = "bestTrackerExplain ";
   static const String userName  = "userName ";
   static const String enterDigitCode  = "enterDigitCode ";
+  static const String notValidUserName  = "notValidUserName ";
+  static const String notValidEmail  = "notValidEmail ";
+  static const String notValidPhone  = "notValidPhone ";
+  static const String cantBeLessThan  = "cantBeLessThan ";
+  static const String cantBeGreaterThan  = "cantBeGreaterThan ";
+  static const String cantBeEmpty = "cantBeEmpty";
 
 
 }
