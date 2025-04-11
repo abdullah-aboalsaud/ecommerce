@@ -12,9 +12,16 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImpl extends LoginController {
-  GlobalKey<FormState> formState =GlobalKey<FormState>();
+  GlobalKey<FormState> formState = GlobalKey<FormState>();
   late TextEditingController email;
   late TextEditingController password;
+
+  bool isShowPassword = true;
+
+  showPassword() {
+    isShowPassword= isShowPassword == true ? false : true;
+    update();
+  }
 
   @override
   login() {
@@ -22,13 +29,13 @@ class LoginControllerImpl extends LoginController {
     if (formData!.validate()) {
       // valid
     } else {
-     // not valid
+      // not valid
     }
   }
 
   @override
   goToSignUp() {
-    Get.toNamed(AppRoute.signUp);
+    Get.offNamed(AppRoute.signUp);
   }
 
   @override
@@ -49,6 +56,4 @@ class LoginControllerImpl extends LoginController {
   goToForgetPassword() {
     Get.toNamed(AppRoute.forgetPasswordScreen);
   }
-
-
 }

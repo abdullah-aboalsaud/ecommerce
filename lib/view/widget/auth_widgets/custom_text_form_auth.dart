@@ -9,6 +9,8 @@ class CustomTextFormAuth extends StatelessWidget {
   final TextEditingController? controller;
   final String? Function(String?) valid;
   final TextInputType? inputType;
+  final bool? isObscure;
+  final void Function()? onTapIcon;
 
   const CustomTextFormAuth({
     super.key,
@@ -16,7 +18,10 @@ class CustomTextFormAuth extends StatelessWidget {
     required this.labelText,
     this.iconData,
     this.controller,
-    required this.valid, this.inputType,
+    required this.valid,
+    this.inputType,
+    this.isObscure,
+    this.onTapIcon
   });
 
   @override
@@ -25,6 +30,7 @@ class CustomTextFormAuth extends StatelessWidget {
       validator: valid,
       controller: controller,
       keyboardType:inputType ,
+      obscureText:  isObscure==true?true:false,
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(fontSize: 14),
@@ -40,9 +46,11 @@ class CustomTextFormAuth extends StatelessWidget {
           vertical: 10,
           horizontal: 30,
         ),
-        suffixIcon: Icon(
-          iconData,
-          color: AppColor.grey,
+        suffixIcon: InkWell(onTap: onTapIcon,
+          child: Icon(
+            iconData,
+            color: AppColor.grey,
+          ),
         ),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(40)),
         focusedBorder: OutlineInputBorder(

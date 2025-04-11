@@ -3,6 +3,7 @@ import 'package:ecommerce/core/constant/app_sizes.dart';
 import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/constant/image_asset.dart';
+import 'package:ecommerce/core/functions/alert_exit_app.dart';
 import 'package:ecommerce/core/functions/valid_input.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_form_auth.dart';
@@ -29,117 +30,135 @@ class LoginScreen extends StatelessWidget {
         ),
       ),
 
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
-        child: Form(
-          key: controller.formState ,
-          child: ListView(
-            children: [
-              SizedBox(height: 20),
+      body: PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, result) async {
+          if (didPop) return;
+          alertExitApp();
+        },
 
-              /// welcome title
-              CustomTextTitleAuth(text: AppStrings.welcomeBack.tr),
-              SizedBox(height: 10),
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+          child: Form(
+            key: controller.formState,
+            child: ListView(
+              children: [
+                SizedBox(height: 20),
 
-              /// text under title
-              CustomTextBodyAuth(text: AppStrings.signInPrompt.tr),
-              SizedBox(height: 60),
+                /// welcome title
+                CustomTextTitleAuth(text: AppStrings.welcomeBack.tr),
+                SizedBox(height: 10),
 
-              /// text field email
-              CustomTextFormAuth(
-                valid: (val){
-                  return validInput(val!, 5, 100, AppStrings.email);
-                },
-                hintText: AppStrings.enterEmail.tr,
-                labelText:AppStrings.email.tr,
-                iconData: Icons.email_outlined,
-                controller: controller.email,
-              ),
-              SizedBox(height: 25),
+                /// text under title
+                CustomTextBodyAuth(text: AppStrings.signInPrompt.tr),
+                SizedBox(height: 60),
 
-              /// text field password
-              CustomTextFormAuth(
-                valid: (val){
-                  return validInput(val!, 5, 30, AppStrings.password);
-                },
-                hintText: AppStrings.enterPassword.tr,
-                labelText: AppStrings.password.tr,
-                iconData: Icons.lock_outline_rounded,
-                controller: controller.password,
-              ),
-              SizedBox(height: 20),
+                /// text field email
+                CustomTextFormAuth(
+                  valid: (val) {
+                    return validInput(val!, 5, 100, AppStrings.email);
+                  },
+                  hintText: AppStrings.enterEmail.tr,
+                  labelText: AppStrings.email.tr,
+                  iconData: Icons.email_outlined,
+                  controller: controller.email,
+                ),
+                SizedBox(height: 25),
 
-              /// forget Password
-              InkWell(
-                onTap: () {
-                  controller.goToForgetPassword();
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 8.0),
-                  child: Text(
-                    AppStrings.forgetPassword.tr,
-                    textAlign: TextAlign.end,
-                    style: TextStyle(decoration: TextDecoration.underline),
+                /// text field password
+                GetBuilder<LoginControllerImpl>(
+                  builder:
+                      (controller) =>
+                          CustomTextFormAuth(
+                        valid: (val) {
+                          return validInput(val!, 5, 30, AppStrings.password);
+                        },
+                        hintText: AppStrings.enterPassword.tr,
+                        labelText: AppStrings.password.tr,
+                        iconData: Icons.lock_outline_rounded,
+                        controller: controller.password,
+                        isObscure: controller.isShowPassword,
+                        onTapIcon: () {
+                          controller.showPassword();
+                        },
+                      ),
+                ),
+                SizedBox(height: 20),
+
+                /// forget Password
+                InkWell(
+                  onTap: () {
+                    controller.goToForgetPassword();
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: Text(
+                      AppStrings.forgetPassword.tr,
+                      textAlign: TextAlign.end,
+                      style: TextStyle(decoration: TextDecoration.underline),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 30),
+                SizedBox(height: 30),
 
-              /// sign in button
-              MaterialButton(
-                onPressed: () {
-                  controller.login();
-                },
-                color: AppColor.blue,
-                textColor: AppColor.white,
-                padding: EdgeInsets.symmetric(vertical: 15),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(AppSizes.buttonCornerRadius),
+                /// sign in button
+                MaterialButton(
+                  onPressed: () {
+                    controller.login();
+                  },
+                  color: AppColor.blue,
+                  textColor: AppColor.white,
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(
+                      AppSizes.buttonCornerRadius,
+                    ),
+                  ),
+                  child: Text(AppStrings.signIn.tr),
                 ),
-                child: Text(AppStrings.signIn.tr),
-              ),
-              SizedBox(height: 50),
+                SizedBox(height: 50),
 
-              /// sign in options
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(
-                    icon: SvgPicture.asset(
-                      ImageAsset.googleLogo,
-                      width: 60,
-                      height: 60,
+                /// sign in options
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    IconButton(
+                      icon: SvgPicture.asset(
+                        ImageAsset.googleLogo,
+                        width: 60,
+                        height: 60,
+                      ),
+                      // Replace with your asset path
+                      onPressed: () {
+                        // Handle Google sign-in
+                      },
                     ),
-                    // Replace with your asset path
-                    onPressed: () {
-                      // Handle Google sign-in
-                    },
-                  ),
 
-                  IconButton(
-                    icon: SvgPicture.asset(
-                      ImageAsset.faceBookLogo,
-                      width: 60,
-                      height: 60,
+                    IconButton(
+                      icon: SvgPicture.asset(
+                        ImageAsset.faceBookLogo,
+                        width: 60,
+                        height: 60,
+                      ),
+                      // Replace with your asset path
+                      onPressed: () {
+                        // Handle Facebook sign-in
+                      },
                     ),
-                    // Replace with your asset path
-                    onPressed: () {
-                      // Handle Facebook sign-in
-                    },
-                  ),
-                ],
-              ),
-              SizedBox(height: 10),
+                  ],
+                ),
+                SizedBox(height: 10),
 
-              /// don't have account
-              CustomTextSignupOrLogin(
-                leadingText: AppStrings.dontHaveAccount.tr,
-                clickableText: AppStrings.signUp.tr,
-                onTap: () {
-                  controller.goToSignUp();
-                },
-              ),
-            ],
+                /// don't have account
+                CustomTextSignupOrLogin(
+                  leadingText: AppStrings.dontHaveAccount.tr,
+                  clickableText: AppStrings.signUp.tr,
+                  onTap: () {
+                    controller.goToSignUp();
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

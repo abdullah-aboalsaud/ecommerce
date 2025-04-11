@@ -47,7 +47,7 @@ class SignUpScreen extends StatelessWidget {
 
               /// text field username
               CustomTextFormAuth(
-                valid: (val){
+                valid: (val) {
                   return validInput(val!, 5, 100, AppStrings.userName);
                 },
                 hintText: AppStrings.enterUserName.tr,
@@ -60,7 +60,7 @@ class SignUpScreen extends StatelessWidget {
 
               /// text field email
               CustomTextFormAuth(
-                valid: (val){
+                valid: (val) {
                   return validInput(val!, 5, 100, AppStrings.email);
                 },
                 hintText: AppStrings.enterEmail.tr,
@@ -72,28 +72,40 @@ class SignUpScreen extends StatelessWidget {
               SizedBox(height: 25),
 
               /// text field password
-              CustomTextFormAuth(
-                valid: (val){
-                  return validInput(val!, 5, 20,AppStrings.password );
-                },
-                hintText: AppStrings.enterPassword.tr,
-                labelText: AppStrings.password.tr,
-                iconData: Icons.lock_outline_rounded,
-                controller: controller.signUpPassword,
-                inputType: TextInputType.visiblePassword,
+              GetBuilder<SignupControllerImp>(
+                builder:
+                    (controller) =>
+                        CustomTextFormAuth(
+                      valid: (val) {
+                        return validInput(val!, 5, 20, AppStrings.password);
+                      },
+                      hintText: AppStrings.enterPassword.tr,
+                      labelText: AppStrings.password.tr,
+                      iconData: Icons.lock_outline_rounded,
+                      controller: controller.signUpPassword,
+                      inputType: TextInputType.visiblePassword,
+                      isObscure: controller.isShowPassword,
+                      onTapIcon: () {
+                        controller.showPassword();
+                      },
+                    ),
               ),
               SizedBox(height: 25),
 
               /// confirm password field
-              CustomTextFormAuth(
-                valid: (val){
-                  return validInput(val!, 5, 20, AppStrings.confirmPassword);
-                },
-                hintText: AppStrings.reEnterPassword.tr,
-                labelText: AppStrings.confirmPassword.tr,
-                iconData: Icons.lock_outline_rounded,
-                controller: controller.signUpConfirmPassword,
-              ),
+            GetBuilder<SignupControllerImp>(builder: (controller)=>  CustomTextFormAuth(
+              valid: (val) {
+                return validInput(val!, 5, 20, AppStrings.confirmPassword);
+              },
+              hintText: AppStrings.reEnterPassword.tr,
+              labelText: AppStrings.confirmPassword.tr,
+              iconData: Icons.lock_outline_rounded,
+              controller: controller.signUpConfirmPassword,
+              isObscure: controller.isShownConfirmPassword,
+              onTapIcon: () {
+                controller.showConfirmPassword();
+              },
+            )),
               SizedBox(height: 30),
 
               /// sign up button

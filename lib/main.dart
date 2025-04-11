@@ -34,19 +34,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: localeController.appTheme,
-
-      /// start page run
-      home:
-       LanguageScreen(),
-      //  SignUpScreen(),
-      // CheckEmailScreen(),
-      //  SuccessSignUpScreen(),
-      // LoginScreen(),
-      //  ResetPasswordScreen(),
-      //  ForgetPassword(),
-      //  TestScreen(),
-      //  VerifyCodeScreen(),
-      routes: routes,
+      getPages: routes,
     );
   }
 }

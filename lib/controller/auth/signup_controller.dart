@@ -14,6 +14,16 @@ class SignupControllerImp extends SignUpController {
   late TextEditingController signUpEmail;
   late TextEditingController signUpPassword;
   late TextEditingController signUpConfirmPassword;
+  bool isShowPassword = true;
+  bool isShownConfirmPassword = true;
+  showPassword() {
+    isShowPassword= isShowPassword == true ? false : true;
+    update();
+  }
+  showConfirmPassword(){
+    isShownConfirmPassword= isShownConfirmPassword == true ? false : true;
+    update();
+  }
 
   @override
   void onInit() {

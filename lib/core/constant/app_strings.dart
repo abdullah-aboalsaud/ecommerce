@@ -58,6 +58,7 @@ class AppStrings {
   static const String cantBeLessThan  = "cantBeLessThan ";
   static const String cantBeGreaterThan  = "cantBeGreaterThan ";
   static const String cantBeEmpty = "cantBeEmpty";
+  static const String onBoarding = "onBoarding";
 
 
 }

@@ -1,4 +1,4 @@
-import 'package:ecommerce/view/screen/auth/forget_password_screen.dart';
+import 'package:ecommerce/core/middleware/my_middleware.dart';
 import 'package:ecommerce/view/screen/auth/forget_password/forget_password_screen.dart';
 import 'package:ecommerce/view/screen/auth/login_screen.dart';
 import 'package:ecommerce/view/screen/auth/forget_password/reset_password_screen.dart';
@@ -7,24 +7,53 @@ import 'package:ecommerce/view/screen/auth/forget_password/success_reset_passwor
 import 'package:ecommerce/view/screen/auth/success_sign_up_screen.dart';
 import 'package:ecommerce/view/screen/auth/verify_code_screen.dart';
 import 'package:ecommerce/view/screen/auth/verify_code_sign_up_screen.dart';
+import 'package:ecommerce/view/screen/language_screen.dart';
 import 'package:ecommerce/view/screen/onboarding_screen.dart';
-import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import 'core/constant/route_names.dart';
 
-Map<String, Widget Function(BuildContext)> routes = {
-
+List<GetPage<dynamic>>? routes = [
+  GetPage(
+      name: "/",
+      page: () => LanguageScreen(),middlewares: [MyMiddleWare()]
+  ),
   /// auth
-  AppRoute.loginScreen: (context) => LoginScreen(),
-  AppRoute.signUp: (context) => SignUpScreen(),
-  AppRoute.forgetPasswordScreen: (context) => ForgetPasswordScreen(),
-  AppRoute.verifyCode: (context) => VerifyCodeScreen(),
-  AppRoute.resetPassword: (context) => ResetPasswordScreen(),
-  AppRoute.successResetPassword: (context) => SuccessResetPasswordScreen(),
-  AppRoute.successSignUpScreen: (context) => SuccessSignUpScreen(),
-  AppRoute.verifyCodeSignUpScreen: (context) => VerifyCodeSignUpScreen(),
+  GetPage(
+      name: AppRoute.loginScreen,
+      page: () => LoginScreen()
+  ),
+  GetPage(
+      name: AppRoute.signUp,
+      page: () => SignUpScreen()
+  ),
+  GetPage(
+    name: AppRoute.forgetPasswordScreen,
+    page: () => ForgetPasswordScreen(),
+  ),
+  GetPage(
+      name: AppRoute.verifyCode,
+      page: () => VerifyCodeScreen()
+  ),
+  GetPage(
+      name: AppRoute.resetPassword,
+      page: () => ResetPasswordScreen()
+  ),
+  GetPage(
+    name: AppRoute.successResetPassword,
+    page: () => SuccessResetPasswordScreen(),
+  ),
+  GetPage(
+    name: AppRoute.successSignUpScreen,
+    page: () => SuccessSignUpScreen(),
+  ),
+  GetPage(
+    name: AppRoute.verifyCodeSignUpScreen,
+    page: () => VerifyCodeSignUpScreen(),
+  ),
 
   /// onBoarding
-  AppRoute.onBoarding: (context) => Onboarding(),
+  GetPage(name: AppRoute.onBoarding, page: () => Onboarding()),
 
-};
+
+];
