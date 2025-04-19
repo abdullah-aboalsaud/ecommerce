@@ -1,5 +1,5 @@
 
-class ImageAsset{
+class AppImageAsset{
   static const String rootImages="assets/images";
   static const String onBoardingImageOne="$rootImages/choose_product.png";
   static const String onBoardingImageTwo="$rootImages/payment.png";

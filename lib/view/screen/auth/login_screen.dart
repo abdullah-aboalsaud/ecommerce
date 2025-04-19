@@ -124,7 +124,7 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     IconButton(
                       icon: SvgPicture.asset(
-                        ImageAsset.googleLogo,
+                        AppImageAsset.googleLogo,
                         width: 60,
                         height: 60,
                       ),
@@ -136,7 +136,7 @@ class LoginScreen extends StatelessWidget {
 
                     IconButton(
                       icon: SvgPicture.asset(
-                        ImageAsset.faceBookLogo,
+                        AppImageAsset.faceBookLogo,
                         width: 60,
                         height: 60,
                       ),
