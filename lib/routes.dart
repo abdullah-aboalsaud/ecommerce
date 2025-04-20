@@ -1,5 +1,4 @@
 import 'package:ecommerce/core/middleware/my_middleware.dart';
-import 'package:ecommerce/test_screen.dart';
 import 'package:ecommerce/view/screen/auth/forget_password/forget_password_screen.dart';
 import 'package:ecommerce/view/screen/auth/login_screen.dart';
 import 'package:ecommerce/view/screen/auth/forget_password/reset_password_screen.dart';
@@ -16,37 +15,26 @@ import 'package:get/get_navigation/src/routes/get_route.dart';
 import 'core/constant/route_names.dart';
 
 List<GetPage<dynamic>>? routes = [
-/// for test
+  // /// for test
+  //   GetPage(
+  //       name: "/",
+  //       page: () => TestViewScreen()
+  //   ),
   GetPage(
-      name: "/",
-      page: () => TestViewScreen()
+    name: "/",
+    page: () => LanguageScreen(),
+    middlewares: [MyMiddleWare()],
   ),
 
-  // GetPage(
-  //     name: "/",
-  //     page: () => LanguageScreen(),middlewares: [MyMiddleWare()]
-  // ),
   /// auth
-  GetPage(
-      name: AppRoute.loginScreen,
-      page: () => LoginScreen()
-  ),
-  GetPage(
-      name: AppRoute.signUp,
-      page: () => SignUpScreen()
-  ),
+  GetPage(name: AppRoute.loginScreen, page: () => LoginScreen()),
+  GetPage(name: AppRoute.signUp, page: () => SignUpScreen()),
   GetPage(
     name: AppRoute.forgetPasswordScreen,
     page: () => ForgetPasswordScreen(),
   ),
-  GetPage(
-      name: AppRoute.verifyCode,
-      page: () => VerifyCodeScreen()
-  ),
-  GetPage(
-      name: AppRoute.resetPassword,
-      page: () => ResetPasswordScreen()
-  ),
+  GetPage(name: AppRoute.verifyCode, page: () => VerifyCodeScreen()),
+  GetPage(name: AppRoute.resetPassword, page: () => ResetPasswordScreen()),
   GetPage(
     name: AppRoute.successResetPassword,
     page: () => SuccessResetPasswordScreen(),
@@ -62,6 +50,4 @@ List<GetPage<dynamic>>? routes = [
 
   /// onBoarding
   GetPage(name: AppRoute.onBoarding, page: () => Onboarding()),
-
-
 ];
