@@ -1,7 +1,8 @@
-import 'package:ecommerce/controller/auth/forgetpassword_controller.dart';
-import 'package:ecommerce/controller/auth/verify_code_controller.dart';
+import 'package:ecommerce/controller/auth/forget_password/forgetpassword_controller.dart';
+import 'package:ecommerce/controller/auth/forget_password/verify_code_controller.dart';
 import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
+import 'package:ecommerce/core/constant/route_names.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_form_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_title_auth.dart';
@@ -14,15 +15,13 @@ class VerifyCodeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeControllerImpl controller = Get.put(
-      VerifyCodeControllerImpl(),
-    );
+    VerifyCodeControllerImp controller = Get.put(VerifyCodeControllerImp());
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         elevation: 0.0,
         title: Text(
-            AppStrings.verificationCode.tr,
+          AppStrings.verificationCode.tr,
           style: Theme.of(
             context,
           ).textTheme.headlineLarge!.copyWith(color: AppColor.darkGrey),
@@ -40,9 +39,8 @@ class VerifyCodeScreen extends StatelessWidget {
             SizedBox(height: 10),
 
             /// text under title
-            CustomTextBodyAuth(text:  AppStrings.enterDigitCode.tr),
+            CustomTextBodyAuth(text: AppStrings.enterDigitCode.tr),
             SizedBox(height: 60),
-
 
             /// OTP field
             Directionality(
@@ -51,7 +49,7 @@ class VerifyCodeScreen extends StatelessWidget {
                 fieldWidth: 50,
                 borderRadius: BorderRadius.circular(20),
                 numberOfFields: 5,
-                borderColor:AppColor.primaryColor,
+                borderColor: AppColor.primaryColor,
                 //set to true to show as box or false to show as dash
                 showFieldAsBox: true,
                 //runs when a code is typed in
@@ -59,21 +57,20 @@ class VerifyCodeScreen extends StatelessWidget {
                   //handle validation or checks here
                 },
                 //runs when every textfield is filled
-                onSubmit: (String verificationCode){
-                  controller.goToResetPassword();
+                onSubmit: (String verificationCode) {
+                  controller.goToResetPassword(verificationCode);
                 }, //
               ),
             ),
 
-
             SizedBox(height: 30),
 
-            /// save button
+            /// continue button (when connect server delete this button)
             MaterialButton(
               onPressed: () {
-                controller.goToResetPassword();
+                controller.goToResetPasswordTest();
               },
-              color: AppColor.blue,
+              color: AppColor.primaryColor,
               textColor: AppColor.white,
               padding: EdgeInsets.symmetric(vertical: 15),
               shape: RoundedRectangleBorder(
@@ -82,7 +79,6 @@ class VerifyCodeScreen extends StatelessWidget {
               child: Text(AppStrings.continueText.tr),
             ),
             SizedBox(height: 20),
-
           ],
         ),
       ),

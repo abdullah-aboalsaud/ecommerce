@@ -9,5 +9,6 @@ class AppRoute{
   static const String successSignUpScreen= "/successSignUpScreen";
   static const String checkEmailScreen= "/checkEmailScreen";
   static const String verifyCodeSignUpScreen= "/verifyCodeSignUpScreen";
+  static const String homeScreen= "/homeScreen";
 
 }

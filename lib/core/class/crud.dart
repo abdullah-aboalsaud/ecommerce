@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class Crud {
   Future<Either<StatusRequest, Map>> postData(String linkUrl, Map data) async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(milliseconds: 1500));
     if (await checkInternet()) {
       var response = await http.post(Uri.parse(linkUrl), body: data);
       print("Crud->postData======${response.statusCode}");

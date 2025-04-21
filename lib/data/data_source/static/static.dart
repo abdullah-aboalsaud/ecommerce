@@ -7,21 +7,21 @@ List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
     title: AppStrings.chooseProduct.tr,
     body: AppStrings.chooseYourProductFrom.tr,
-    image: AppImageAsset.onBoardingImageOne,
+    image: AppImages.onBoardingImageOne,
   ),
   OnBoardingModel(
     title: AppStrings.easySafePayment.tr,
     body: AppStrings.easySafePaymentExplain.tr,
-    image: AppImageAsset.onBoardingImageTwo,
+    image: AppImages.onBoardingImageTwo,
   ),
   OnBoardingModel(
     title: AppStrings.trackYourOrder.tr,
     body: AppStrings.bestTrackerExplain.tr,
-    image: AppImageAsset.onBoardingImageThree,
+    image: AppImages.onBoardingImageThree,
   ),
   OnBoardingModel(
     title: AppStrings.fastDelivery.tr,
     body: AppStrings.fastDeliveryExplain.tr,
-    image: AppImageAsset.onBoardingImageFour,
+    image: AppImages.onBoardingImageFour,
   ),
 ];

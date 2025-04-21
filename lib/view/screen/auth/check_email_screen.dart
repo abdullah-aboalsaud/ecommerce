@@ -1,4 +1,4 @@
-import 'package:ecommerce/controller/auth/forgetpassword_controller.dart';
+import 'package:ecommerce/controller/auth/forget_password/forgetpassword_controller.dart';
 import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/functions/valid_input.dart';
@@ -50,16 +50,16 @@ class CheckEmailScreen extends StatelessWidget {
                 hintText: AppStrings.enterEmail.tr,
                 labelText: AppStrings.email.tr,
                 iconData: Icons.email_outlined,
-                controller: controller.email,
+                textEditingController: controller.email,
               ),
               SizedBox(height: 60),
 
               /// check button
               MaterialButton(
                 onPressed: () {
-                  controller.goToVerifyCode();
+                  controller.checkEmail();
                 },
-                color: AppColor.blue,
+                color: AppColor.primaryColor,
                 textColor: AppColor.white,
                 padding: EdgeInsets.symmetric(vertical: 15),
                 shape: RoundedRectangleBorder(

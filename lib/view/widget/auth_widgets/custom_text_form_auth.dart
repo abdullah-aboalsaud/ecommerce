@@ -6,7 +6,7 @@ class CustomTextFormAuth extends StatelessWidget {
   final String hintText;
   final String labelText;
   final IconData? iconData;
-  final TextEditingController? controller;
+  final TextEditingController? textEditingController;
   final String? Function(String?) valid;
   final TextInputType? inputType;
   final bool? isObscure;
@@ -17,7 +17,7 @@ class CustomTextFormAuth extends StatelessWidget {
     required this.hintText,
     required this.labelText,
     this.iconData,
-    this.controller,
+    this.textEditingController,
     required this.valid,
     this.inputType,
     this.isObscure,
@@ -28,7 +28,7 @@ class CustomTextFormAuth extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       validator: valid,
-      controller: controller,
+      controller: textEditingController,
       keyboardType:inputType ,
       obscureText:  isObscure==true?true:false,
       decoration: InputDecoration(

@@ -59,6 +59,7 @@ class AppStrings {
   static const String cantBeGreaterThan  = "cantBeGreaterThan ";
   static const String cantBeEmpty = "cantBeEmpty";
   static const String onBoarding = "onBoarding";
+  static const String emailNotFound = "emailNotFound";
 
 
 }

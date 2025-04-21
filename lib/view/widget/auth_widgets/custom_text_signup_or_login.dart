@@ -19,7 +19,7 @@ class CustomTextSignupOrLogin extends StatelessWidget {
           child: Text(
             clickableText,
             style: TextStyle(
-              color: AppColor.blue,
+              color: AppColor.primaryColor,
               fontWeight: FontWeight.bold,
             ),
           ),

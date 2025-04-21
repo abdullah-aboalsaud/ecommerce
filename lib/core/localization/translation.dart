@@ -72,11 +72,13 @@ class MyTranslation extends Translations {
       AppStrings.cantBeLessThan:"Value can't be less than ",
       AppStrings.cantBeGreaterThan:"Value can't be larger than ",
       AppStrings.cantBeEmpty: "Can't be Empty",
+      AppStrings.emailNotFound:"Email Not Found",
 
     },
 
     /// arabic section --------------------------------------------------------
     "ar": {
+      AppStrings.emailNotFound:"البريد غير موجود",
       AppStrings.cantBeEmpty: "لا يمكن أن يكون فارغًا",
       AppStrings.cantBeGreaterThan:"لا يمكن ان تكون القيمة اكبر من ",
       AppStrings.cantBeLessThan:"لا يمكن ان تكون القيمة اقل من ",

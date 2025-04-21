@@ -1,20 +1,24 @@
-import 'package:ecommerce/controller/auth/forgetpassword_controller.dart';
-import 'package:ecommerce/controller/auth/reset_password_controller.dart';
+import 'package:ecommerce/controller/auth/forget_password/forgetpassword_controller.dart';
+import 'package:ecommerce/controller/auth/forget_password/reset_password_controller.dart';
+import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
+import 'package:ecommerce/core/constant/image_asset.dart';
+import 'package:ecommerce/core/functions/valid_input.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_form_auth.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_title_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   const ResetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ResetPasswordControllerImpl controller = Get.put(
-      ResetPasswordControllerImpl(),
+    ResetPasswordControllerImp controller = Get.put(
+      ResetPasswordControllerImp(),
     );
     return Scaffold(
       appBar: AppBar(
@@ -28,55 +32,73 @@ class ResetPasswordScreen extends StatelessWidget {
         ),
       ),
 
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-        child: ListView(
-          children: [
-            SizedBox(height: 20),
+      body: GetBuilder<ResetPasswordControllerImp>(
+        builder: (controller) {
+          return controller.statusRequest == StatusRequest.loading
+              ? Center(
+                child: Lottie.asset(AppImages.loadingLottie, height: 150),
+              )
+              : Container(
+                padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                child: Form(
+                  key: controller.formState,
+                  child: ListView(
+                    children: [
+                      SizedBox(height: 20),
 
-            /// title of the page
-            CustomTextTitleAuth(text: AppStrings.newPassword.tr),
-            SizedBox(height: 10),
+                      /// title of the page
+                      CustomTextTitleAuth(text: AppStrings.newPassword.tr),
+                      SizedBox(height: 10),
 
-            /// text under title
-            CustomTextBodyAuth(text: AppStrings.enterNewPasswordExplain.tr),
-            SizedBox(height: 60),
+                      /// text under title
+                      CustomTextBodyAuth(
+                        text: AppStrings.enterNewPasswordExplain.tr,
+                      ),
+                      SizedBox(height: 60),
 
-            /// text field enter new password
-            CustomTextFormAuth(
-              valid: (val){},
-              hintText: AppStrings.enterNewPassword.tr,
-              labelText: AppStrings.newPassword.tr,
-              iconData: Icons.email_outlined,
-              controller: controller.password,
-            ),
-            SizedBox(height: 25,),
-            /// Re Enter password
-            CustomTextFormAuth(
-              valid: (val){},
-              hintText: AppStrings.reEnterPassword.tr,
-              labelText:AppStrings.confirmPassword.tr,
-              iconData: Icons.lock_outline_rounded,
-              controller: controller.rePassword,
-            ),
-            SizedBox(height: 30),
+                      /// text field enter new password
+                      CustomTextFormAuth(
+                        valid: (val) {
+                          return validInput(val!, 3, 20, AppStrings.password);
+                        },
+                        hintText: AppStrings.enterNewPassword.tr,
+                        labelText: AppStrings.newPassword.tr,
+                        iconData: Icons.email_outlined,
+                        textEditingController: controller.password,
+                      ),
+                      SizedBox(height: 25),
 
-            /// save button
-            MaterialButton(
-              onPressed: () {
-                controller.goToSuccessResetPassword();
-              },
-              color: AppColor.blue,
-              textColor: AppColor.white,
-              padding: EdgeInsets.symmetric(vertical: 15),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: Text(AppStrings.save.tr),
-            ),
-            SizedBox(height: 20),
-          ],
-        ),
+                      /// Re Enter password
+                      CustomTextFormAuth(
+                        valid: (val) {
+                          return validInput(val!, 3, 20, AppStrings.password);
+                        },
+                        hintText: AppStrings.reEnterPassword.tr,
+                        labelText: AppStrings.confirmPassword.tr,
+                        iconData: Icons.lock_outline_rounded,
+                        textEditingController: controller.repassword,
+                      ),
+                      SizedBox(height: 30),
+
+                      /// save button
+                      MaterialButton(
+                        onPressed: () {
+                          controller.goToSuccessResetPassword();
+                        },
+                        color: AppColor.primaryColor,
+                        textColor: AppColor.white,
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                        child: Text(AppStrings.save.tr),
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                ),
+              );
+        },
       ),
     );
   }

@@ -1,4 +1,4 @@
-class AppImageAsset {
+class AppImages {
   static const String rootImages = "assets/images";
   static const String rootLottie = "assets/lottie";
   static const String onBoardingImageOne = "$rootImages/choose_product.png";

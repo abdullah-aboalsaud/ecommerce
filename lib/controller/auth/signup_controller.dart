@@ -1,7 +1,7 @@
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/route_names.dart';
 import 'package:ecommerce/core/functions/handling_data.dart';
-import 'package:ecommerce/data/data_source/remote/auth/sign_up.dart';
+import 'package:ecommerce/data/data_source/remote/auth/sign_up_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 

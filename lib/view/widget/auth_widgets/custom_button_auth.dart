@@ -17,7 +17,7 @@ class CustomButtonAuth extends StatelessWidget {
         ),
         padding: EdgeInsets.symmetric(vertical: 15),
         onPressed: onPressed,
-        color: AppColor.blue,
+        color: AppColor.primaryColor,
         textColor: Colors.white,
         child: Text(
           text,

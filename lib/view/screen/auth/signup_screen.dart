@@ -42,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
         child: GetBuilder<SignupControllerImp>(builder: (controller){
           return
             controller.statusRequest==StatusRequest.loading?
-                Center(child: Lottie.asset(AppImageAsset.loadingLottie),)
+                Center(child: Lottie.asset(AppImages.loadingLottie),)
                 :Container(
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
             child: Form(
@@ -67,7 +67,7 @@ class SignUpScreen extends StatelessWidget {
                     hintText: AppStrings.enterUserName.tr,
                     labelText: AppStrings.userName.tr,
                     iconData: Icons.person_outline,
-                    controller: controller.userName,
+                    textEditingController: controller.userName,
                     inputType: TextInputType.name,
                   ),
                   SizedBox(height: 25),
@@ -80,7 +80,7 @@ class SignUpScreen extends StatelessWidget {
                     hintText: AppStrings.enterEmail.tr,
                     labelText: AppStrings.email.tr,
                     iconData: Icons.email_outlined,
-                    controller: controller.email,
+                    textEditingController: controller.email,
                     inputType: TextInputType.emailAddress,
                   ),
                   SizedBox(height: 25),
@@ -93,7 +93,7 @@ class SignUpScreen extends StatelessWidget {
                     hintText: AppStrings.enterPhone.tr,
                     labelText: AppStrings.phone.tr,
                     iconData: Icons.phone_android,
-                    controller: controller.phone,
+                    textEditingController: controller.phone,
                     inputType: TextInputType.phone,
                   ),
                   SizedBox(height: 25),
@@ -109,7 +109,7 @@ class SignUpScreen extends StatelessWidget {
                           hintText: AppStrings.enterPassword.tr,
                           labelText: AppStrings.password.tr,
                           iconData: Icons.lock_outline_rounded,
-                          controller: controller.password,
+                          textEditingController: controller.password,
                           inputType: TextInputType.visiblePassword,
                           isObscure: controller.isShowPassword,
                           onTapIcon: () {
@@ -135,7 +135,7 @@ class SignUpScreen extends StatelessWidget {
                     children: [
                       IconButton(
                         icon: SvgPicture.asset(
-                          AppImageAsset.googleLogo,
+                          AppImages.googleLogo,
                           width: 60,
                           height: 60,
                         ),
@@ -147,7 +147,7 @@ class SignUpScreen extends StatelessWidget {
 
                       IconButton(
                         icon: SvgPicture.asset(
-                          AppImageAsset.faceBookLogo,
+                          AppImages.faceBookLogo,
                           width: 60,
                           height: 60,
                         ),
@@ -163,7 +163,7 @@ class SignUpScreen extends StatelessWidget {
                   CustomAlreadyHaveAccountButton(
                     text1: AppStrings.alreadyHaveAccount.tr,
                     text2: AppStrings.signIn.tr,
-                    color: AppColor.blue,
+                    color: AppColor.primaryColor,
                     onPressed: () {
                       controller.goToLogin();
                     },
