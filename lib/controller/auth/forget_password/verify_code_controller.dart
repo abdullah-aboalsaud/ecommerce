@@ -17,7 +17,7 @@ class VerifyCodeControllerImp extends VerifyCodeController {
   VerifyCodeData verifyCodeData =
   VerifyCodeData(Get.find());
 
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   @override
   void onInit() {
     email = Get.arguments['email'];

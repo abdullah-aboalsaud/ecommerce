@@ -19,7 +19,7 @@ class LoginControllerImpl extends LoginController {
   late TextEditingController email;
   late TextEditingController password;
   bool isShowPassword = true;
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   LoginData loginData = LoginData(Get.find());
   @override
   login() async{
@@ -34,7 +34,8 @@ class LoginControllerImpl extends LoginController {
           Get.toNamed(AppRoute.homeScreen);
         }  else{
           Get.defaultDialog(title: "Error", middleText: "Email or password Not correct");
-          statusRequest = StatusRequest.failure;
+          statusRequest = StatusRequest.none;
+
         }
       }
       update();

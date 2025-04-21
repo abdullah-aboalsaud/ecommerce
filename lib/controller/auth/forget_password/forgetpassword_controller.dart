@@ -15,7 +15,7 @@ class ForgetPasswordControllerImpl extends ForgetPasswordController {
 
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   late TextEditingController email;
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
 
   @override
   void onInit() {

@@ -13,16 +13,16 @@ abstract class ResetPasswordController extends GetxController {
 class ResetPasswordControllerImp extends ResetPasswordController {
   GlobalKey<FormState> formState = GlobalKey<FormState>();
   ResetPasswordData resetPasswordData = ResetPasswordData(Get.find());
-  StatusRequest? statusRequest;
+  StatusRequest statusRequest = StatusRequest.none;
   late TextEditingController password;
-  late TextEditingController repassword;
+  late TextEditingController rePassword;
   String? email;
 
   @override
   void onInit() {
     email = Get.arguments['email'];
     password = TextEditingController();
-    repassword = TextEditingController();
+    rePassword = TextEditingController();
     super.onInit();
   }
 
@@ -30,7 +30,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
 
   @override
   goToSuccessResetPassword() async {
-    if (password.text != repassword.text) {
+    if (password.text != rePassword.text) {
       return Get.defaultDialog(
           title: "warning", middleText: "Password Not Match");
     }
@@ -48,7 +48,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
         } else {
           Get.defaultDialog(
               title: "ُWarning", middleText: "Try Again");
-          statusRequest = StatusRequest.failure;
+          statusRequest = StatusRequest.none;
         }
       }
       update();
@@ -62,7 +62,7 @@ class ResetPasswordControllerImp extends ResetPasswordController {
   @override
   void dispose() {
     password.dispose();
-    repassword.dispose();
+    rePassword.dispose();
     super.dispose();
   }
 

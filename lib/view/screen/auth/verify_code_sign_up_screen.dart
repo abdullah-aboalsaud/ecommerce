@@ -1,6 +1,7 @@
 import 'package:ecommerce/controller/auth/forget_password/forgetpassword_controller.dart';
 import 'package:ecommerce/controller/auth/forget_password/verify_code_controller.dart';
 import 'package:ecommerce/controller/auth/verify_code_sign_up_controller.dart';
+import 'package:ecommerce/core/class/handling_data_view.dart';
 import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_text_body_auth.dart';
@@ -15,8 +16,8 @@ class VerifyCodeSignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    VerifyCodeSignUpControllerImpl controller = Get.put(
-      VerifyCodeSignUpControllerImpl(),
+    VerifyCodeSignUpControllerImp controller = Get.put(
+      VerifyCodeSignUpControllerImp(),
     );
     return Scaffold(
       appBar: AppBar(
@@ -30,45 +31,49 @@ class VerifyCodeSignUpScreen extends StatelessWidget {
         ),
       ),
 
-      body: Container(
-        padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-        child: ListView(
-          children: [
-            SizedBox(height: 20),
+      body: GetBuilder<VerifyCodeSignUpControllerImp>(
+        builder: (controller) {
+          return HandlingDataView(
+            statusRequest: controller.statusRequest,
+            widget: Container(
+              padding: EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+              child: ListView(
+                children: [
+                  SizedBox(height: 20),
 
-            /// title of the page
-            CustomTextTitleAuth(text: AppStrings.checkCode.tr),
-            SizedBox(height: 10),
+                  /// title of the page
+                  CustomTextTitleAuth(text: AppStrings.checkCode.tr),
+                  SizedBox(height: 10),
 
-            /// text under title
-            CustomTextBodyAuth(text:  AppStrings.enterDigitCode.tr),
-            SizedBox(height: 60),
+                  /// text under title
+                  CustomTextBodyAuth(text: AppStrings.enterDigitCode.tr),
+                  SizedBox(height: 60),
 
-
-            /// OTP field
-            Directionality(
-              textDirection: TextDirection.ltr,
-              child: OtpTextField(
-                fieldWidth: 50,
-                borderRadius: BorderRadius.circular(20),
-                numberOfFields: 5,
-                borderColor:AppColor.primaryColor,
-                //set to true to show as box or false to show as dash
-                showFieldAsBox: true,
-                //runs when a code is typed in
-                onCodeChanged: (String code) {
-                  //handle validation or checks here
-                },
-                //runs when every text field is filled
-                onSubmit: (String verificationCode){
-                  controller.goToSuccessSignUp();
-                }, //
+                  /// OTP field
+                  Directionality(
+                    textDirection: TextDirection.ltr,
+                    child: OtpTextField(
+                      fieldWidth: 50,
+                      borderRadius: BorderRadius.circular(20),
+                      numberOfFields: 5,
+                      borderColor: AppColor.primaryColor,
+                      //set to true to show as box or false to show as dash
+                      showFieldAsBox: true,
+                      //runs when a code is typed in
+                      onCodeChanged: (String code) {
+                        //handle validation or checks here
+                      },
+                      //runs when every text field is filled
+                      onSubmit: (String verificationCode) {
+                        controller.goToSuccessSignUp(verificationCode);
+                      }, //
+                    ),
+                  ),
+                ],
               ),
             ),
-
-
-          ],
-        ),
+          );
+        },
       ),
     );
   }

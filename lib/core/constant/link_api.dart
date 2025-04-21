@@ -1,11 +1,12 @@
 // API links
 
-const String linkServerName = "http://192.168.8.101/ecommerce-php";
+const String linkServerName = "http://192.168.8.103/ecommerce-php";
 const String linkTest = "$linkServerName/test.php";
 
 ///================== auth =============================== ///
 const String linkSignUp = "$linkServerName/auth/signup.php";
 const String linkLogin = "$linkServerName/auth/login.php";
+const String linkVerifyCodeSignUp = "$linkServerName/auth/verifycode_signup.php";
 
 ///================= forget password ===================== ///
 const String linkCheckEmail = "$linkServerName/forget_password/checkemail.php";

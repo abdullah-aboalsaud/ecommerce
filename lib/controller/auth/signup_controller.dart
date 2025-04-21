@@ -19,7 +19,7 @@ class SignupControllerImp extends SignUpController {
   late TextEditingController email;
   late TextEditingController phone;
   late TextEditingController password;
-   StatusRequest? statusRequest;
+   StatusRequest statusRequest = StatusRequest.none;
   
   SignUpData signUpData = SignUpData(Get.find());
 
@@ -34,11 +34,13 @@ class SignupControllerImp extends SignUpController {
       if (StatusRequest.success == statusRequest) {
         if (response['status']=="success") {
 
-            Get.offNamed(AppRoute.verifyCodeSignUpScreen);
+            Get.offNamed(AppRoute.verifyCodeSignUpScreen,arguments:{
+              "email":email.text
+            } );
 
         }  else{
           Get.defaultDialog(title: "Error", middleText: response['message']);
-          statusRequest = StatusRequest.failure;
+          statusRequest = StatusRequest.none;
         }
 
       }

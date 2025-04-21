@@ -12,13 +12,13 @@ class HandlingDataView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return statusRequest == StatusRequest.loading
-        ?   Center(child: Lottie.asset(AppImages.loadingLottie , width: 250 , height: 250))
+        ?   Center(child: Lottie.asset(AppImages.loadingLottie , width: 250 , height: 200))
         : statusRequest == StatusRequest.offlineFailure
-        ? Center(child: Lottie.asset(AppImages.offline , width: 250 , height: 250))
+        ? Center(child: Lottie.asset(AppImages.offline , width: 250 , height: 200))
         : statusRequest == StatusRequest.serverFailure
-        ?Center(child: Lottie.asset(AppImages.server , width: 250 , height: 250))
+        ?Center(child: Lottie.asset(AppImages.server , width: 250 , height: 200))
         : statusRequest == StatusRequest.failure
-        ? Center(child: Lottie.asset(AppImages.noData , width: 250 , height: 250 , repeat: true  ))
+        ? Center(child: Image.asset(AppImages.noData , width: 250 , height: 250))
         : widget;
   }
 }
