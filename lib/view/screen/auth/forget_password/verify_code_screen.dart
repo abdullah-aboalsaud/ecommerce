@@ -63,22 +63,6 @@ class VerifyCodeScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 30),
-
-            /// continue button (when connect server delete this button)
-            MaterialButton(
-              onPressed: () {
-                controller.goToResetPasswordTest();
-              },
-              color: AppColor.primaryColor,
-              textColor: AppColor.white,
-              padding: EdgeInsets.symmetric(vertical: 15),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0),
-              ),
-              child: Text(AppStrings.continueText.tr),
-            ),
-            SizedBox(height: 20),
           ],
         ),
       ),
