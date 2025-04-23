@@ -60,6 +60,8 @@ class AppStrings {
   static const String cantBeEmpty = "cantBeEmpty";
   static const String onBoarding = "onBoarding";
   static const String emailNotFound = "emailNotFound";
+  static const String id = "id";
+  static const String step = "step";
 
 
 }

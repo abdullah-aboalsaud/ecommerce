@@ -19,10 +19,10 @@ class OnBoardingControllerImp extends OnBoardingController{
   next() {
     currentPage++;
     if(currentPage== onBoardingList.length) {
-      myServices.sharedPreferences.setBool(AppStrings.onBoarding, true);
+      myServices.sharedPreferences.setString(AppStrings.step, "1");
      Get.offAllNamed(AppRoute.loginScreen);
     }
-    pageController.animateToPage(currentPage, duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+    pageController.animateToPage(currentPage, duration: Duration(milliseconds: 200), curve: Curves.easeInOut);
   }
 
   @override
