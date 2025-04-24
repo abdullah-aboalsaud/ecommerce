@@ -22,7 +22,7 @@ class CheckEmailScreen extends StatelessWidget {
           AppStrings.checkEmail.tr,
           style: Theme.of(
             context,
-          ).textTheme.headlineLarge!.copyWith(color: AppColor.grey),
+          ).textTheme.headlineLarge!.copyWith(color: AppColors.grey),
         ),
       ),
 
@@ -59,8 +59,8 @@ class CheckEmailScreen extends StatelessWidget {
                 onPressed: () {
                   controller.checkEmail();
                 },
-                color: AppColor.primaryColor,
-                textColor: AppColor.white,
+                color: AppColors.primaryColor,
+                textColor: AppColors.white,
                 padding: EdgeInsets.symmetric(vertical: 15),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),

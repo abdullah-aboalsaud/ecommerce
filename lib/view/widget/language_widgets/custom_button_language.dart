@@ -17,7 +17,7 @@ class CustomButtonLanguage extends StatelessWidget {
         ),
         textColor: Colors.white,
         onPressed:onPressed,
-        color: AppColor.primaryColor,
+        color: AppColors.primaryColor,
         child: Text(
           textButton,
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),

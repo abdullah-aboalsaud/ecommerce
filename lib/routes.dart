@@ -10,7 +10,6 @@ import 'package:ecommerce/view/screen/auth/verify_code_sign_up_screen.dart';
 import 'package:ecommerce/view/screen/home_screen.dart';
 import 'package:ecommerce/view/screen/language_screen.dart';
 import 'package:ecommerce/view/screen/onboarding_screen.dart';
-import 'package:ecommerce/view/test_view.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import 'core/constant/route_names.dart';

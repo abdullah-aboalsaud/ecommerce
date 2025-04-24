@@ -29,7 +29,7 @@ class SignUpScreen extends StatelessWidget {
           AppStrings.signUp.tr,
           style: TextTheme.of(
             context,
-          ).headlineLarge!.copyWith(color: AppColor.grey),
+          ).headlineLarge!.copyWith(color: AppColors.grey),
         ),
       ),
 
@@ -167,7 +167,7 @@ class SignUpScreen extends StatelessWidget {
                       CustomAlreadyHaveAccountButton(
                         text1: AppStrings.alreadyHaveAccount.tr,
                         text2: AppStrings.signIn.tr,
-                        color: AppColor.primaryColor,
+                        color: AppColors.primaryColor,
                         onPressed: () {
                           controller.goToLogin();
                         },

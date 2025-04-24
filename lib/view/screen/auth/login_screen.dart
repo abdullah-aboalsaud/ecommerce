@@ -29,7 +29,7 @@ class LoginScreen extends StatelessWidget {
           AppStrings.signIn.tr,
           style: TextTheme.of(
             context,
-          ).headlineLarge!.copyWith(color: AppColor.grey),
+          ).headlineLarge!.copyWith(color: AppColors.grey),
         ),
       ),
 
@@ -120,8 +120,8 @@ class LoginScreen extends StatelessWidget {
                         onPressed: () {
                           controller.login();
                         },
-                        color: AppColor.primaryColor,
-                        textColor: AppColor.white,
+                        color: AppColors.primaryColor,
+                        textColor: AppColors.white,
                         padding: EdgeInsets.symmetric(vertical: 15),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(

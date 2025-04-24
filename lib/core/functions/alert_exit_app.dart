@@ -15,14 +15,14 @@ alertExitApp<bool>() {
             onPressed: () {
               Get.back();
             },
-            child: const Text("Cancel",style: TextStyle(color: AppColor.primaryColor),),
+            child: const Text("Cancel",style: TextStyle(color: AppColors.primaryColor),),
           ),
           SizedBox(),
           TextButton(
             onPressed: () {
               exit(0);
             },
-            child: const Text("Yes",style: TextStyle(color: AppColor.primaryColor),),
+            child: const Text("Yes",style: TextStyle(color: AppColors.primaryColor),),
           ),
         ],
       ),

@@ -36,7 +36,7 @@ class _TestScreenState extends State<TestScreen> {
               fieldWidth: 50,
               borderRadius: BorderRadius.circular(20),
               numberOfFields: 5,
-              borderColor: AppColor.primaryColor,
+              borderColor: AppColors.primaryColor,
               //set to true to show as box or false to show as dash
               showFieldAsBox: true,
               //runs when a code is typed in

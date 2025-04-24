@@ -28,7 +28,7 @@ class ResetPasswordScreen extends StatelessWidget {
           AppStrings.resetPassword.tr,
           style: Theme.of(
             context,
-          ).textTheme.headlineLarge!.copyWith(color: AppColor.darkGrey),
+          ).textTheme.headlineLarge!.copyWith(color: AppColors.darkGrey),
         ),
       ),
 
@@ -83,8 +83,8 @@ class ResetPasswordScreen extends StatelessWidget {
                       onPressed: () {
                         controller.goToSuccessResetPassword();
                       },
-                      color: AppColor.primaryColor,
-                      textColor: AppColor.white,
+                      color: AppColors.primaryColor,
+                      textColor: AppColors.white,
                       padding: EdgeInsets.symmetric(vertical: 15),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20.0),
