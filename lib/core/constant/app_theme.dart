@@ -7,7 +7,8 @@ ThemeData themeEnglish =ThemeData(
     seedColor: AppColors.primaryColor,
     primary: AppColors.primaryColor,
     secondary: AppColors.secondaryColor,
-    surface: AppColors.tertiaryColor,
+    surface: AppColors.background,
+
 
   ),
   scaffoldBackgroundColor: AppColors.tertiaryColor,
@@ -52,7 +53,7 @@ ThemeData themeArabic =ThemeData(
     seedColor: AppColors.primaryColor,
     primary: AppColors.primaryColor,
     secondary: AppColors.secondaryColor,
-    surface: AppColors.tertiaryColor,
+    surface: AppColors.background,
 
   ),
   scaffoldBackgroundColor: AppColors.tertiaryColor,

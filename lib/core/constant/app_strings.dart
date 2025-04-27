@@ -62,6 +62,8 @@ class AppStrings {
   static const String emailNotFound = "emailNotFound";
   static const String id = "id";
   static const String step = "step";
+  static const String categories = "categories";
+  static const String selectedCat = "selectedCat";
 
 
 }
