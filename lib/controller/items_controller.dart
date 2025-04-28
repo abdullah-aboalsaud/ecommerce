@@ -1,4 +1,5 @@
 import 'package:ecommerce/core/class/status_request.dart';
+import 'package:ecommerce/core/constant/app_strings.dart';
 import 'package:ecommerce/core/functions/handling_data.dart';
 import 'package:ecommerce/data/data_source/remote/items_data.dart';
 import 'package:get/get.dart';
@@ -6,7 +7,7 @@ import 'package:get/get.dart';
 abstract class ItemsController extends GetxController {
   initialData();
   changeCat(int val, String catVal);
-  getItems(String categoryid);
+  getItems(String categoryId);
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -28,9 +29,9 @@ class ItemsControllerImp extends ItemsController {
 
   @override
   initialData() {
-    categories = Get.arguments['categories'];
-    selectedCat = Get.arguments['selectedcat'];
-    catid = Get.arguments['catid'];
+    categories = Get.arguments[AppStrings.categories];
+    selectedCat = Get.arguments[AppStrings.selectedCat];
+    catid = Get.arguments[AppStrings.categoryId];
     getItems(catid!);
   }
 
@@ -43,10 +44,10 @@ class ItemsControllerImp extends ItemsController {
   }
 
   @override
-  getItems(categoryid) async {
+  getItems(categoryId) async {
     data.clear();
     statusRequest = StatusRequest.loading;
-    var response = await itemsData.getItemsData(categoryid);
+    var response = await itemsData.getItemsData(categoryId);
     print("=============================== Controller $response ");
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {

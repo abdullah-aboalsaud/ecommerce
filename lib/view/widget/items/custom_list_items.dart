@@ -33,18 +33,20 @@ class CustomListItems extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              SizedBox(height: 5),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text("Rating 3.5 ", textAlign: TextAlign.center),
-                  Container(
-                    alignment: Alignment.bottomCenter,
-                    height: 22,
+                  Text("Rating 3.5 ", textAlign: TextAlign.center,style:TextStyle(fontFamily: "sans"),),
+                  SizedBox(
+                   // alignment: Alignment.bottomCenter,
+
                     child: Row(
                       children: [
                         ...List.generate(
                           5,
-                          (index) => Icon(Icons.star, size: 15),
+                          (index) => Icon(Icons.star, size: 14,color: AppColors.grey,),
                         ),
                       ],
                     ),
@@ -57,7 +59,7 @@ class CustomListItems extends StatelessWidget {
                   Text(
                     "${itemsModel.itemsPrice} \$",
                     style: TextStyle(
-                      color: AppColors.primaryColor,
+                      color:  AppColors.green,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                       fontFamily: "sans",
@@ -65,7 +67,7 @@ class CustomListItems extends StatelessWidget {
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Icon(Icons.favorite, color: AppColors.primaryColor),
+                    icon: Icon(Icons.favorite, color: AppColors.red),
                   ),
                 ],
               ),

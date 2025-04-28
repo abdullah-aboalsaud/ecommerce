@@ -12,10 +12,13 @@ class AppColors {
   static const Color textLight = Color(0xFF757575);   // Subtext
 
 
+
   /// other colors ===========================================================
   static const Color darkGrey = Color(0xff515151);
   static const Color grey = Colors.grey;
   static const Color black = Color(0xff000000);
   static const Color white = Colors.white;
+  static const Color red = Colors.red;
+  static  Color green = Colors.greenAccent.shade700;
 
 }

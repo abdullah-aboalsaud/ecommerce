@@ -1,6 +1,6 @@
 // API links
 
-const String linkServerName = "http://192.168.8.101/ecommerce-php";
+const String linkServerName = "http://192.168.8.103/ecommerce-php";
 
 ///================= images ================================///
 const String linkImages = "$linkServerName/upload";

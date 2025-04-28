@@ -64,6 +64,7 @@ class AppStrings {
   static const String step = "step";
   static const String categories = "categories";
   static const String selectedCat = "selectedCat";
+  static const String categoryId = "categoryId";
 
 
 }

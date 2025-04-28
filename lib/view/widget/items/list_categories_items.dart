@@ -47,9 +47,7 @@ class Categories extends GetView<ItemsControllerImp> {
 
                 padding: EdgeInsets.only(right: 10 , left: 10 , bottom: 5),
                 decoration: controller.selectedCat == i
-                    ? BoxDecoration(
-                    border: Border(
-                        bottom: BorderSide(
+                    ? BoxDecoration(border: Border(bottom: BorderSide(
                             width: 3, color: AppColors.primaryColor)))
                     : null,
                 child: Text(
