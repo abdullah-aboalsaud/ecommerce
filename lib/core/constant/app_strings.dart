@@ -65,6 +65,7 @@ class AppStrings {
   static const String categories = "categories";
   static const String selectedCat = "selectedCat";
   static const String categoryId = "categoryId";
+  static const String itemsModel = "itemsModel";
 
 
 }

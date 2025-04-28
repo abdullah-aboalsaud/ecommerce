@@ -1,13 +1,16 @@
 import 'package:ecommerce/core/class/status_request.dart';
 import 'package:ecommerce/core/constant/app_strings.dart';
+import 'package:ecommerce/core/constant/route_names.dart';
 import 'package:ecommerce/core/functions/handling_data.dart';
 import 'package:ecommerce/data/data_source/remote/items_data.dart';
+import 'package:ecommerce/data/model/items_model.dart';
 import 'package:get/get.dart';
 
 abstract class ItemsController extends GetxController {
   initialData();
   changeCat(int val, String catVal);
   getItems(String categoryId);
+  gotoProductDetails(ItemsModel itemsModel);
 }
 
 class ItemsControllerImp extends ItemsController {
@@ -60,5 +63,12 @@ class ItemsControllerImp extends ItemsController {
       // End
     }
     update();
+  }
+
+  @override
+  gotoProductDetails(itemsModel) {
+    Get.toNamed(AppRoute.productDetails,arguments: {
+      AppStrings.itemsModel:itemsModel
+    });
   }
 }

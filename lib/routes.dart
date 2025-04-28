@@ -11,19 +11,17 @@ import 'package:ecommerce/view/screen/home_screen.dart';
 import 'package:ecommerce/view/screen/items.dart';
 import 'package:ecommerce/view/screen/language_screen.dart';
 import 'package:ecommerce/view/screen/onboarding_screen.dart';
+import 'package:ecommerce/view/screen/product_details.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import 'core/constant/route_names.dart';
 
 List<GetPage<dynamic>>? routes = [
   // /// for test
-  //   GetPage(
-  //       name: "/",
-  //       page: () => TestViewScreen()
-  //   ),
+  //   GetPage(name: "/", page: () => ProductDetails()),
 
-  GetPage(
-    name: "/", page: () => LanguageScreen(), middlewares: [MyMiddleWare()],),
+  /// start page
+  GetPage(name: "/", page: () => LanguageScreen(), middlewares: [MyMiddleWare()],),
 
   /// onBoarding
   GetPage(name: AppRoute.onBoarding, page: () => Onboarding()),
@@ -35,12 +33,17 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.verifyCode, page: () => VerifyCodeScreen()),
   GetPage(name: AppRoute.resetPassword, page: () => ResetPasswordScreen()),
   GetPage(name: AppRoute.successResetPassword, page: () => SuccessResetPasswordScreen(),),
-  GetPage(name: AppRoute.successSignUpScreen, page: () => SuccessSignUpScreen(),),
-  GetPage(name: AppRoute.verifyCodeSignUpScreen, page: () => VerifyCodeSignUpScreen(),),
+  GetPage(
+    name: AppRoute.successSignUpScreen,
+    page: () => SuccessSignUpScreen(),
+  ),
+  GetPage(
+    name: AppRoute.verifyCodeSignUpScreen,
+    page: () => VerifyCodeSignUpScreen(),
+  ),
 
   /// home
   GetPage(name: AppRoute.homeScreen, page: () => HomeScreen()),
   GetPage(name: AppRoute.items, page: () => Items()),
-
-
+  GetPage(name: AppRoute.productDetails, page: () => ProductDetails()),
 ];
