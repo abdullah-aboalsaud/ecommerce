@@ -1,6 +1,7 @@
 import 'package:ecommerce/controller/home_controller.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/constant/link_api.dart';
+import 'package:ecommerce/core/functions/translate_database.dart';
 import 'package:ecommerce/data/model/categories_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -20,7 +21,7 @@ class ListCategoriesHome extends GetView<HomeControllerImp> {
 
         itemBuilder: (context, index) {
           return Categories(
-            i:index,
+            i: index,
             categoriesModel: CategoriesModel.fromJson(
               controller.categories[index],
             ),
@@ -35,13 +36,17 @@ class Categories extends GetView<HomeControllerImp> {
   final CategoriesModel categoriesModel;
   final int i;
 
-  const Categories({super.key, required this.categoriesModel,required this.i});
+  const Categories({super.key, required this.categoriesModel, required this.i});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        controller.goToItems(controller.categories, i, categoriesModel.categoriesId.toString());
+        controller.goToItems(
+          controller.categories,
+          i,
+          categoriesModel.categoriesId.toString(),
+        );
       },
       child: Column(
         children: [
@@ -61,8 +66,10 @@ class Categories extends GetView<HomeControllerImp> {
               ),
             ),
           ),
+
+          /// name of category
           Text(
-            "${categoriesModel.categoriesName}",
+            "${ translateDatabase(categoriesModel.categoriesNameAr, categoriesModel.categoriesName) }",
             style: const TextStyle(fontSize: 13, color: AppColors.black),
           ),
         ],

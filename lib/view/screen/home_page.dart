@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                     /// title categories
                     CustomTitleHome(title: "Categories"),
 
-                    /// categories =============================================
+                    /// categories list ========================================
                     ListCategoriesHome(),
 
                     SizedBox(height: 10),

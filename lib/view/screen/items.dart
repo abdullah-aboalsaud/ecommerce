@@ -18,24 +18,28 @@ class Items extends StatelessWidget {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(15),
-        child: GetBuilder<ItemsControllerImp>(
-          builder:
-              (controller) => HandlingDataView(
-                statusRequest: controller.statusRequest,
-                widget: ListView(
-                  children: [
-                    CustomAppBar(
-                      titleAppBar: "Find Product",
-                      onPressedIcon: () {},
-                      onPressedSearch: () {},
-                    ),
-                    SizedBox(height: 20),
-                    ListCategoriesItems(),
-                    GridView.builder(
+        child: ListView(
+          children: [
+            CustomAppBar(
+              titleAppBar: "Find Product",
+              onPressedIcon: () {},
+              onPressedSearch: () {},
+            ),
+            SizedBox(height: 20),
+            ListCategoriesItems(),
+
+            /// view items section
+            GetBuilder<ItemsControllerImp>(builder:
+                (controller) => HandlingDataView(
+                    statusRequest: controller.statusRequest,
+                    widget: GridView.builder(
                       shrinkWrap: true,
                       physics: NeverScrollableScrollPhysics(),
                       itemCount: controller.data.length,
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, childAspectRatio: 0.7,),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: 0.7,
+                      ),
                       itemBuilder: (BuildContext context, index) {
                         return CustomListItems(
                           itemsModel: ItemsModel.fromJson(
@@ -44,9 +48,9 @@ class Items extends StatelessWidget {
                         );
                       },
                     ),
-                  ],
-                ),
-              ),
+                  ),
+            ),
+          ],
         ),
       ),
     );
