@@ -29,7 +29,7 @@ class LoginScreen extends StatelessWidget {
           AppStrings.signIn.tr,
           style: TextTheme.of(
             context,
-          ).headlineLarge!.copyWith(color: AppColors.grey),
+          ).headlineLarge!.copyWith(color: AppColors.white),
         ),
       ),
 

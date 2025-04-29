@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Items extends StatelessWidget {
-  const Items({Key? key}) : super(key: key);
+  const Items({super.key});
 
   @override
   Widget build(BuildContext context) {
