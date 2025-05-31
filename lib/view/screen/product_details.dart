@@ -3,6 +3,8 @@ import 'package:ecommerce/controller/product_details_controller.dart';
 import 'package:ecommerce/core/constant/color.dart';
 import 'package:ecommerce/core/constant/link_api.dart';
 import 'package:ecommerce/view/widget/auth_widgets/custom_button_auth.dart';
+import 'package:ecommerce/view/widget/product_details/price_and_count.dart';
+import 'package:ecommerce/view/widget/product_details/sub_items_list.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -36,7 +38,7 @@ class ProductDetails extends StatelessWidget {
                     ),
                   ),
 
-                  /// image of item
+                  /// image of item --------------------------------------------
                   Positioned(
                     top: -130,
                     right: Get.width / 8,
@@ -54,6 +56,7 @@ class ProductDetails extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 200),
+
                   Positioned(
                     top: 130,
                     right: 0,
@@ -63,45 +66,39 @@ class ProductDetails extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          /// title name of item
+                          /// title name of item--------------------------------
                           Text(
                             "${controller.itemsModel.itemsName}",
                             style: TextTheme.of(context).headlineLarge!
                                 .copyWith(color: AppColors.primaryColor),
                           ),
 
-                          Row(
-                            children: [
-                              Row(),
-                              Spacer(),
-
-                              /// price
-                              Text(
-                                " ${controller.itemsModel.itemsPrice} \$",
-                                style: TextStyle(
-                                  color: AppColors.green,
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: "sans",
-                                ),
-                              ),
-                            ],
+                          PriceAndCountItems(
+                            onAdd: () {},
+                            onRemove: () {},
+                            price: " ${controller.itemsModel.itemsPrice}",
+                            count: "2",
                           ),
 
                           SizedBox(height: 10),
 
-                          /// description text
+                          /// description text----------------------------------
                           Text(
                             "${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ${controller.itemsModel.itemsDesc} ",
                             style: TextStyle(),
                           ),
                           SizedBox(height: 10),
 
+                          /// text color
                           Text(
                             "Color",
                             style: TextTheme.of(context).headlineLarge!
                                 .copyWith(color: AppColors.primaryColor),
                           ),
+                          SizedBox(height: 10),
+
+                          /// sub items list
+                          SubItemsList(),
                         ],
                       ),
                     ),
@@ -115,7 +112,6 @@ class ProductDetails extends StatelessWidget {
 
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all(15),
-
         child: CustomButtonAuth(text: "Add to cart", onPressed: () {}),
       ),
     );
